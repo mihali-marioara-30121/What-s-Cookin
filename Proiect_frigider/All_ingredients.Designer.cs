@@ -29,15 +29,26 @@ namespace Proiect_frigider
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel_all_ingredients = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // panel_all_ingredients
+            // 
+            this.panel_all_ingredients.AutoScroll = true;
+            this.panel_all_ingredients.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel_all_ingredients.Location = new System.Drawing.Point(-1, -2);
+            this.panel_all_ingredients.Name = "panel_all_ingredients";
+            this.panel_all_ingredients.Size = new System.Drawing.Size(673, 477);
+            this.panel_all_ingredients.TabIndex = 1;
             // 
             // All_ingredients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(670, 471);
             this.ControlBox = false;
+            this.Controls.Add(this.panel_all_ingredients);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "All_ingredients";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -46,5 +57,7 @@ namespace Proiect_frigider
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel_all_ingredients;
     }
 }

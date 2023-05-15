@@ -42,7 +42,7 @@ namespace Proiect_frigider
             this.button_CS = new System.Windows.Forms.Button();
             this.checkedListBox_selectedIngredients = new System.Windows.Forms.CheckedListBox();
             this.button_CA = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.findRecipeButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -149,7 +149,7 @@ namespace Proiect_frigider
             this.panel4.Controls.Add(this.button_CS);
             this.panel4.Controls.Add(this.checkedListBox_selectedIngredients);
             this.panel4.Controls.Add(this.button_CA);
-            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.findRecipeButton);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(765, 55);
             this.panel4.Name = "panel4";
@@ -186,15 +186,16 @@ namespace Proiect_frigider
             this.button_CA.UseVisualStyleBackColor = false;
             this.button_CA.Click += new System.EventHandler(this.button_CA_Click);
             // 
-            // button4
+            // findRecipeButton
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button4.Location = new System.Drawing.Point(91, 433);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 39);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "FIND RECIEPE";
-            this.button4.UseVisualStyleBackColor = false;
+            this.findRecipeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.findRecipeButton.Location = new System.Drawing.Point(91, 433);
+            this.findRecipeButton.Name = "findRecipeButton";
+            this.findRecipeButton.Size = new System.Drawing.Size(141, 39);
+            this.findRecipeButton.TabIndex = 7;
+            this.findRecipeButton.Text = "FIND RECIEPE";
+            this.findRecipeButton.UseVisualStyleBackColor = false;
+            this.findRecipeButton.Click += new System.EventHandler(this.findRecipeButton_Click_1);
             // 
             // label3
             // 
@@ -244,7 +245,7 @@ namespace Proiect_frigider
             this.panel_main.Controls.Add(this.button10);
             this.panel_main.Controls.Add(this.button9);
             this.panel_main.Controls.Add(this.panel4);
-            this.panel_main.Location = new System.Drawing.Point(-9, 98);
+            this.panel_main.Location = new System.Drawing.Point(-12, 98);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(1442, 768);
             this.panel_main.TabIndex = 16;
@@ -285,7 +286,7 @@ namespace Proiect_frigider
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(204, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 17);
+            this.label2.Size = new System.Drawing.Size(228, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "WHAT\'S IN YOUR FRIDGE TODAY?\r\n";
             // 
@@ -294,7 +295,7 @@ namespace Proiect_frigider
             this.label_kitchen.AutoSize = true;
             this.label_kitchen.Location = new System.Drawing.Point(11, 73);
             this.label_kitchen.Name = "label_kitchen";
-            this.label_kitchen.Size = new System.Drawing.Size(113, 17);
+            this.label_kitchen.Size = new System.Drawing.Size(108, 16);
             this.label_kitchen.TabIndex = 0;
             this.label_kitchen.Text = "QUICK KITCHEN\r\n";
             // 
@@ -316,8 +317,8 @@ namespace Proiect_frigider
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1430, 864);
-            this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel_main);
             this.Name = "FormFirstPage";
             this.Text = "What s cookin’?";
             this.Load += new System.EventHandler(this.FormFirstPage_Load);
@@ -340,7 +341,7 @@ namespace Proiect_frigider
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button_CA;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button findRecipeButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;

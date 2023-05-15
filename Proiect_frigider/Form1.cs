@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proiect_frigider
@@ -17,15 +11,18 @@ namespace Proiect_frigider
 
         MyProfile mp = new MyProfile();
         Quick_ingredients quick_i = new Quick_ingredients();
-        All_ingredients all_i = new All_ingredients();
+        All_ingredients all_i; 
         Bookmarks bookmarks = new Bookmarks();
         Login login = new Login();
         Tips tips = new Tips();
+        Recipes recipesForm;
+        RecipeDescription recipeDescription;
         public FormFirstPage()
         {
             InitializeComponent();
-          
-
+            recipeDescription = new RecipeDescription(); 
+            all_i = new All_ingredients(checkedListBox_selectedIngredients);
+            recipeDescription.Show();
         }
 
         /*  private void textBox_Search_KeyPress(object sender, KeyPressEventArgs e)
@@ -88,10 +85,8 @@ namespace Proiect_frigider
               }
             */
         }
-
         private void button_MyProfile_Click(object sender, EventArgs e)
         {
-
             // mp = new MyProfile();
             mp.TopLevel = false;
             panel_main.Controls.Add(mp);
@@ -105,8 +100,14 @@ namespace Proiect_frigider
             bookmarks.Hide();
             login.Hide();
             tips.Hide();
+            if(recipesForm.ShowDialog() == DialogResult.OK) 
+            { 
+                recipesForm.Hide();
+            }
+           
+            //recipeDescription.Hide();
             // panel_main.BringToFront();
-            // panel_main.Show();
+             panel_main.Show();
         }
 
         private void button_bookmarks_Click(object sender, EventArgs e)
@@ -153,7 +154,6 @@ namespace Proiect_frigider
                     {
                         quick_i.checkedListBox1.SetItemChecked(index1, false);
                     }
-
                     if (index2 >= 0)
                     {
                         quick_i.checkedListBox2.SetItemChecked(index2, false);
@@ -191,7 +191,31 @@ namespace Proiect_frigider
             }
         }
 
+        private void findRecipeButton_Click_1(object sender, EventArgs e)
+        {
+            string ingredientList = "";
 
+            for (int i = 0; i < checkedListBox_selectedIngredients.Items.Count; i++)
+            {       
+                    string ingredient = checkedListBox_selectedIngredients.Items[i].ToString();
+                    ingredientList += ingredient + ",";
+            }
+            if (checkedListBox_selectedIngredients.Items.Count == 0)
+            {
+                MessageBox.Show("Select ingredients!");
+            }
+            else
+            {
+                ingredientList.Substring(0, ingredientList.Length - 1);
+                List<Recipe> recipes = RecipeService.findRecipesByIngredients(ingredientList, 20);
+               
+                recipesForm = new Recipes(recipes);
 
+                recipesForm.TopLevel = false;
+                panel_main.Controls.Add(recipesForm);
+                recipesForm.BringToFront();
+                recipesForm.Show();
+            }
+        }
     }
 }
