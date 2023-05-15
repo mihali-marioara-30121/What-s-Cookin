@@ -48,6 +48,7 @@ namespace Proiect_frigider
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.panel_main = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel_ingredients = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -151,7 +152,7 @@ namespace Proiect_frigider
             this.panel4.Controls.Add(this.button_CA);
             this.panel4.Controls.Add(this.findRecipeButton);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(765, 55);
+            this.panel4.Location = new System.Drawing.Point(766, 127);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(303, 485);
             this.panel4.TabIndex = 11;
@@ -210,7 +211,7 @@ namespace Proiect_frigider
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button9.Location = new System.Drawing.Point(1147, 55);
+            this.button9.Location = new System.Drawing.Point(1160, 281);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(207, 72);
             this.button9.TabIndex = 12;
@@ -220,7 +221,7 @@ namespace Proiect_frigider
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button10.Location = new System.Drawing.Point(1145, 170);
+            this.button10.Location = new System.Drawing.Point(1160, 399);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(209, 53);
             this.button10.TabIndex = 13;
@@ -230,7 +231,7 @@ namespace Proiect_frigider
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button11.Location = new System.Drawing.Point(1147, 273);
+            this.button11.Location = new System.Drawing.Point(1160, 490);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(191, 55);
             this.button11.TabIndex = 14;
@@ -240,6 +241,7 @@ namespace Proiect_frigider
             // panel_main
             // 
             this.panel_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel_main.Controls.Add(this.label1);
             this.panel_main.Controls.Add(this.groupBox1);
             this.panel_main.Controls.Add(this.button11);
             this.panel_main.Controls.Add(this.button10);
@@ -249,6 +251,16 @@ namespace Proiect_frigider
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(1442, 768);
             this.panel_main.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(1042, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 29);
+            this.label1.TabIndex = 16;
             // 
             // groupBox1
             // 
@@ -286,7 +298,7 @@ namespace Proiect_frigider
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(204, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(228, 16);
+            this.label2.Size = new System.Drawing.Size(237, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "WHAT\'S IN YOUR FRIDGE TODAY?\r\n";
             // 
@@ -295,7 +307,7 @@ namespace Proiect_frigider
             this.label_kitchen.AutoSize = true;
             this.label_kitchen.Location = new System.Drawing.Point(11, 73);
             this.label_kitchen.Name = "label_kitchen";
-            this.label_kitchen.Size = new System.Drawing.Size(108, 16);
+            this.label_kitchen.Size = new System.Drawing.Size(113, 17);
             this.label_kitchen.TabIndex = 0;
             this.label_kitchen.Text = "QUICK KITCHEN\r\n";
             // 
@@ -327,6 +339,7 @@ namespace Proiect_frigider
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel_main.ResumeLayout(false);
+            this.panel_main.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -335,7 +348,7 @@ namespace Proiect_frigider
         }
 
         #endregion
-        private System.Windows.Forms.Button button_login;
+        public System.Windows.Forms.Button button_login;
         private System.Windows.Forms.PictureBox pictureBox_logo;
         private System.Windows.Forms.Button button_MyProfile;
         private System.Windows.Forms.Panel panel2;
@@ -358,6 +371,7 @@ namespace Proiect_frigider
         private System.Windows.Forms.TextBox textBox_Search;
         public System.Windows.Forms.CheckedListBox checkedListBox_selectedIngredients;
         private System.Windows.Forms.Button button_CS;
+        public System.Windows.Forms.Label label1;
     }
 }
 

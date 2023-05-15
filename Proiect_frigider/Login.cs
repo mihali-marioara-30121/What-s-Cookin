@@ -5,7 +5,7 @@ namespace Proiect_frigider
 {
     public partial class Login : Form
     {
-        Register register = new Register();
+        Register register= new Register();
         public Login()
         {
             InitializeComponent();

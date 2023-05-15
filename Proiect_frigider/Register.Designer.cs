@@ -56,6 +56,7 @@ namespace Proiect_frigider
             this.textBox1.Size = new System.Drawing.Size(197, 27);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "USERNAME";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // button1
             // 
@@ -78,6 +79,7 @@ namespace Proiect_frigider
             this.textBox2.Size = new System.Drawing.Size(197, 27);
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "EMAIL";
+            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // textBox3
             // 
@@ -88,6 +90,8 @@ namespace Proiect_frigider
             this.textBox3.Size = new System.Drawing.Size(197, 27);
             this.textBox3.TabIndex = 4;
             this.textBox3.Text = "PASSWORD";
+            this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -98,6 +102,8 @@ namespace Proiect_frigider
             this.textBox4.Size = new System.Drawing.Size(197, 27);
             this.textBox4.TabIndex = 5;
             this.textBox4.Text = "CONFIRM PASSWORD";
+            this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // Register
             // 

@@ -17,12 +17,14 @@ namespace Proiect_frigider
         Tips tips = new Tips();
         Recipes recipesForm;
         RecipeDescription recipeDescription;
+       // Register register = new Register();
         public FormFirstPage()
         {
             InitializeComponent();
             recipeDescription = new RecipeDescription(); 
             all_i = new All_ingredients(checkedListBox_selectedIngredients);
             recipeDescription.Show();
+            
         }
 
         /*  private void textBox_Search_KeyPress(object sender, KeyPressEventArgs e)
@@ -35,6 +37,7 @@ namespace Proiect_frigider
         {
 
             quick_i.Owner = this;
+            //register.Owner = this;
             quick_i.TopLevel = false;
             panel_ingredients.Controls.Add(quick_i);
             quick_i.BringToFront();
@@ -100,10 +103,11 @@ namespace Proiect_frigider
             bookmarks.Hide();
             login.Hide();
             tips.Hide();
-            if(recipesForm.ShowDialog() == DialogResult.OK) 
+          /*  if(recipesForm.ShowDialog() == DialogResult.OK) 
             { 
                 recipesForm.Hide();
             }
+          */
            
             //recipeDescription.Hide();
             // panel_main.BringToFront();
