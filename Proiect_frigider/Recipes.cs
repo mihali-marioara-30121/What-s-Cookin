@@ -9,16 +9,19 @@ namespace Proiect_frigider
 {
     public partial class Recipes : Form
     {
+        FormFirstPage formFirstPage;
         private List<Recipe> recipes;
         Boolean missedIngredientsRowsGrew = false;
-        public Recipes(List<Recipe> recipeList)
+        RecipeDescription recipeDescription;
+        Panel panel_main;
+        public Recipes(Panel panel_main, List<Recipe> recipeList)
         {
+             this.panel_main = panel_main;
             recipes = recipeList;
             InitializeComponent();
             generateAllRecipes();
         }
     
-
     private void generateAllRecipes()
     {
         recipesPanel.Controls.Clear();
@@ -47,8 +50,14 @@ namespace Proiect_frigider
 
     private void populateUI(RecipeDTO recipeDTOs, int xPos, int yPos, int spacing)
     {
-        // Add image on the top
-        PictureBox recipeImage = getRecipeImage(recipeDTOs.image, xPos, yPos);
+
+            if (recipeDTOs == null)
+            {
+                MessageBox.Show("Error!");
+                return;
+            }
+            // Add image on the top
+            PictureBox recipeImage = getRecipeImage(recipeDTOs.image, xPos, yPos);
         int maxWidth = 300;
 
         // Create the label for the recipe
@@ -78,6 +87,21 @@ namespace Proiect_frigider
          recipesPanel.Controls.Add(recipeTitle);
          recipesPanel.Controls.Add(missedIngredients);
          recipesPanel.Controls.Add(unusedIngredients);
+
+            //on click event
+
+            recipeImage.Click += (sender, e) =>
+            {
+                // Open the ItemDetailsForm and pass the corresponding data
+                recipeDescription = new RecipeDescription(recipeDTOs);
+                //recipesPanel.Hide();
+                //recipeDescription.TopLevel = false;
+                //panel_main.Controls.Add(recipeDescription);
+                //recipeDescription.BringToFront();
+                //recipeDescription.Show();
+
+                recipeDescription.Show();
+            };
         }
 
         private Label resizedLabel(Label label, int maxWidth)
@@ -98,7 +122,6 @@ namespace Proiect_frigider
                 // Set the label size to fit the text
                 label.Size = textSize;
             }
-
             return label;
         }
 
@@ -123,14 +146,8 @@ namespace Proiect_frigider
                     pictureBox.Image = Image.FromStream(stream);
                 }
             }
-
             // Add the PictureBox control to your form
             return pictureBox;
-        }
-
-        private void panel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

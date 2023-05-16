@@ -15,7 +15,6 @@ namespace Proiect_frigider
         public int usedIngredientCount { get; set; }
         public List<Ingredient> usedIngredients { get; set; }
 
-
         public override string ToString()
         {
             return $"id: {id}\n" +

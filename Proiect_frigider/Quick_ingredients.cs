@@ -5,16 +5,13 @@ using System.Windows.Forms;
 
 namespace Proiect_frigider
 {
-
     public partial class Quick_ingredients : Form
     {
         //FormFirstPage form1 = new FormFirstPage();
-
         public Quick_ingredients()
         {
             InitializeComponent();
             //  form1.Owner = this;
-
 
         }
         // public CheckedListBox CheckedListBox1 { get { return checkedListBox1; } }
@@ -102,20 +99,13 @@ namespace Proiect_frigider
                     checkedListBox3.Items.Add(nume);
 
                 }
-
-
             }
 
             // Închide SqlDataReader și conexiunea la baza de date și eliberează resursele
             reader.Close();
             command.Dispose();
             connection.Close();
-
-       
-           
-        }
-
-        
+        }  
     }
 }
 
