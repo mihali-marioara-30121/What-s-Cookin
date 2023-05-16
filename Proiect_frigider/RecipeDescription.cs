@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net;
@@ -15,8 +14,54 @@ namespace Proiect_frigider
         {
             InitializeComponent();
             recipeDTO = recipe;
+            setRecipeDetails(recipeDTO.image);
             // PopulateRecipeDetails();
         }
+
+    
+
+        private void setRecipeDetails(string imageUrl)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                byte[] imageData = webClient.DownloadData(imageUrl);
+                using (MemoryStream stream = new MemoryStream(imageData))
+                {
+                    Image image = Image.FromStream(stream);
+                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox.Location = new Point(250, 39);
+                    pictureBox.Width = 550; 
+                    pictureBox.Height = 300;
+                    pictureBox.Image = image;
+                }
+            }
+
+            pictureBox.Show();
+            titleLabel.Text = recipeDTO.title;
+            descriptionLabel.Text = recipeDTO.description;
+        }
+
+
+        private void BookmarkButton_Click(object sender, EventArgs e)
+        {     
+            MessageBox.Show("Recipe bookmarked!");
+        }
+
+        private void recipeDescriptionPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private string GetCommentsFromDatabase()
+        {
+            return "User1: Great recipe!\r\nUser2: I loved it!\r\nUser3: Delicious!";
+        }
+
+        private void bookmarkButton_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Recipe bookmarked!");
+        }
+
 
 
         //private void PopulateRecipeDetails()
@@ -83,53 +128,5 @@ namespace Proiect_frigider
         //    goBackButton.Click += GoBackButton_Click;
         //    recipeDescriptionPanel.Controls.Add(goBackButton);
         //}
-
-        private void BookmarkButton_Click(object sender, EventArgs e)
-        {
-            // Perform the bookmarking logic
-            // You can store the bookmarked recipe in a database or any other storage mechanism
-            // You can display a confirmation message or perform any other actions
-            MessageBox.Show("Recipe bookmarked!");
-        }
-
-        private PictureBox GetRecipeImage(string imageUrl)
-        {
-            PictureBox pictureBox = new PictureBox();
-
-            using (WebClient webClient = new WebClient())
-            {
-                byte[] imageData = webClient.DownloadData(imageUrl);
-                using (MemoryStream stream = new MemoryStream(imageData))
-                {
-                    Image image = Image.FromStream(stream);
-                    pictureBox.Image = image;
-                }
-            }
-
-            return pictureBox;
-        }
-
-        private string GetCommentsFromDatabase()
-        {
-            // Retrieve comments for the current recipe from the database or any other source
-            // Return the comments as a string
-            return "User1: Great recipe!\r\nUser2: I loved it!\r\nUser3: Delicious!";
-        }
-
-        private void bookmarkButton_Click_1(object sender, EventArgs e)
-        {
-            // Perform the bookmarking logic
-            // You can store the bookmarked recipe in a database or any other storage mechanism
-            // You can display a confirmation message or perform any other actions
-            MessageBox.Show("Recipe bookmarked!");
-        }
-
-        private void recipeDescriptionPanel_Paint(object sender, PaintEventArgs e)
-        {
-            pictureBox = GetRecipeImage(recipeDTO.image);
-            pictureBox.Show();
-            titleLabel.Text = recipeDTO.title;
-            descriptionLabel.Text = recipeDTO.description;
-        }
     }
 }

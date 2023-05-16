@@ -58,7 +58,7 @@ namespace Proiect_frigider
             // 
             // bookmarkButton
             // 
-            this.bookmarkButton.Location = new System.Drawing.Point(581, 615);
+            this.bookmarkButton.Location = new System.Drawing.Point(538, 738);
             this.bookmarkButton.Name = "bookmarkButton";
             this.bookmarkButton.Size = new System.Drawing.Size(138, 56);
             this.bookmarkButton.TabIndex = 3;
@@ -69,10 +69,10 @@ namespace Proiect_frigider
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(585, 390);
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(530, 441);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(111, 29);
+            this.titleLabel.Size = new System.Drawing.Size(179, 46);
             this.titleLabel.TabIndex = 2;
             this.titleLabel.Text = "titleLabel";
             // 
@@ -80,17 +80,18 @@ namespace Proiect_frigider
             // 
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.BackColor = System.Drawing.Color.White;
-            this.descriptionLabel.Location = new System.Drawing.Point(587, 442);
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(443, 515);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(107, 16);
+            this.descriptionLabel.Size = new System.Drawing.Size(266, 39);
             this.descriptionLabel.TabIndex = 1;
             this.descriptionLabel.Text = "descriptionLabel";
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(428, 46);
+            this.pictureBox.Location = new System.Drawing.Point(319, 39);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(428, 326);
+            this.pictureBox.Size = new System.Drawing.Size(627, 399);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
