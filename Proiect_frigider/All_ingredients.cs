@@ -115,9 +115,7 @@ namespace Proiect_frigider
             }
 
             connection.Close();
-
             return listaObiecte;
         }
-
     }
 }

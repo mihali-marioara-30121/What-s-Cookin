@@ -1,4 +1,7 @@
-﻿namespace Proiect_frigider
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace Proiect_frigider
 {
     partial class RecipeDescription
     {
@@ -28,108 +31,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.description_label = new System.Windows.Forms.Label();
-            this.bookmarkIt_button = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ingredients_listBox = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.recipeDescriptionPanel = new System.Windows.Forms.Panel();
+            this.bookmarkButton = new System.Windows.Forms.Button();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.recipeDescriptionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // recipeDescriptionPanel
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(351, 28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(567, 240);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.recipeDescriptionPanel.AutoScroll = true;
+            this.recipeDescriptionPanel.AutoScrollMargin = new System.Drawing.Size(0, 700);
+            this.recipeDescriptionPanel.AutoScrollMinSize = new System.Drawing.Size(0, 683);
+            this.recipeDescriptionPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.recipeDescriptionPanel.Controls.Add(this.bookmarkButton);
+            this.recipeDescriptionPanel.Controls.Add(this.titleLabel);
+            this.recipeDescriptionPanel.Controls.Add(this.descriptionLabel);
+            this.recipeDescriptionPanel.Controls.Add(this.pictureBox);
+            this.recipeDescriptionPanel.Location = new System.Drawing.Point(41, 52);
+            this.recipeDescriptionPanel.Name = "recipeDescriptionPanel";
+            this.recipeDescriptionPanel.Size = new System.Drawing.Size(1333, 683);
+            this.recipeDescriptionPanel.TabIndex = 0;
+            this.recipeDescriptionPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.recipeDescriptionPanel_Paint);
             // 
-            // vScrollBar1
+            // bookmarkButton
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(1264, 1);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(21, 641);
-            this.vScrollBar1.TabIndex = 2;
-            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
+            this.bookmarkButton.Location = new System.Drawing.Point(538, 738);
+            this.bookmarkButton.Name = "bookmarkButton";
+            this.bookmarkButton.Size = new System.Drawing.Size(138, 56);
+            this.bookmarkButton.TabIndex = 3;
+            this.bookmarkButton.Text = "BOOKMARK IT!";
+            this.bookmarkButton.UseVisualStyleBackColor = true;
+            this.bookmarkButton.Click += new System.EventHandler(this.bookmarkButton_Click_1);
             // 
-            // label1
+            // titleLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(563, 284);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 29);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "tilte_label";
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(530, 441);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(179, 46);
+            this.titleLabel.TabIndex = 2;
+            this.titleLabel.Text = "titleLabel";
             // 
-            // description_label
+            // descriptionLabel
             // 
-            this.description_label.AutoSize = true;
-            this.description_label.Location = new System.Drawing.Point(570, 400);
-            this.description_label.Name = "description_label";
-            this.description_label.Size = new System.Drawing.Size(110, 16);
-            this.description_label.TabIndex = 5;
-            this.description_label.Text = "description_label";
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.BackColor = System.Drawing.Color.White;
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(443, 515);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(266, 39);
+            this.descriptionLabel.TabIndex = 1;
+            this.descriptionLabel.Text = "descriptionLabel";
             // 
-            // bookmarkIt_button
+            // pictureBox
             // 
-            this.bookmarkIt_button.Location = new System.Drawing.Point(538, 563);
-            this.bookmarkIt_button.Name = "bookmarkIt_button";
-            this.bookmarkIt_button.Size = new System.Drawing.Size(169, 67);
-            this.bookmarkIt_button.TabIndex = 6;
-            this.bookmarkIt_button.Text = "BOOKMARK IT!";
-            this.bookmarkIt_button.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 284);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "ingredients:";
-            // 
-            // ingredients_listBox
-            // 
-            this.ingredients_listBox.FormattingEnabled = true;
-            this.ingredients_listBox.ItemHeight = 16;
-            this.ingredients_listBox.Location = new System.Drawing.Point(62, 303);
-            this.ingredients_listBox.Name = "ingredients_listBox";
-            this.ingredients_listBox.Size = new System.Drawing.Size(128, 260);
-            this.ingredients_listBox.TabIndex = 8;
+            this.pictureBox.Location = new System.Drawing.Point(319, 39);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(627, 399);
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
             // 
             // RecipeDescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(1285, 642);
-            this.Controls.Add(this.ingredients_listBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.bookmarkIt_button);
-            this.Controls.Add(this.description_label);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.pictureBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(1442, 768);
+            this.Controls.Add(this.recipeDescriptionPanel);
             this.Name = "RecipeDescription";
             this.Text = "RecipeDescription";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.recipeDescriptionPanel.ResumeLayout(false);
+            this.recipeDescriptionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label description_label;
-        private System.Windows.Forms.Button bookmarkIt_button;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox ingredients_listBox;
+        private System.Windows.Forms.Panel recipeDescriptionPanel;
+        private Button bookmarkButton;
+        private Label titleLabel;
+        private Label descriptionLabel;
+        private PictureBox pictureBox;
     }
 }

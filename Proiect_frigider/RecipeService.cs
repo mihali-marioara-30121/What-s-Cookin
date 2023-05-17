@@ -35,15 +35,33 @@ namespace Proiect_frigider
             {
                 string title = recipe.title;
                 string description = generateDescription(recipe);
+                string ingredients = getAllIngredients(recipe);
                 string unusedIngredients = extractUnusedIngredients(recipe);
+                string usedIngredients = extractUsedIngredients(recipe);
                 string missedIngredients = extractMissedIngredients(recipe);
                 string image = recipe.image;
 
-                RecipeDTO recipeDTO = new RecipeDTO(title, description, image, unusedIngredients, missedIngredients);
+                RecipeDTO recipeDTO = new RecipeDTO(title, description, image, ingredients, usedIngredients, unusedIngredients, missedIngredients);
                 recipeDTOs.Add(recipeDTO);
             }
 
             return recipeDTOs;
+        }
+
+        private static string extractUsedIngredients(Recipe recipe)
+        {
+            string usedIngredients = "";
+
+            foreach (Ingredient usedIngredient in recipe.usedIngredients)
+            {
+                usedIngredients += usedIngredient.name + ",";
+            }
+
+            if (usedIngredients.Length > 0)
+            {
+                return usedIngredients.Substring(0, usedIngredients.Length - 1);
+            }
+            return "";
         }
 
         private static string extractMissedIngredients(Recipe recipe)
@@ -65,16 +83,16 @@ namespace Proiect_frigider
         private static string extractUnusedIngredients(Recipe recipe)
         {
 
-            string missedIngredients = "";
+            string unusedIngredients = "";
 
-            foreach (Ingredient missedIngredient in recipe.unusedIngredients)
+            foreach (Ingredient unusedIngredient in recipe.unusedIngredients)
             {
-                missedIngredients += missedIngredient.name + ",";
+                unusedIngredients += unusedIngredient.name + ",";
             }
 
-            if (missedIngredients.Length > 0)
+            if (unusedIngredients.Length > 0)
             {
-                return missedIngredients.Substring(0, missedIngredients.Length - 1);
+                return unusedIngredients.Substring(0, unusedIngredients.Length - 1);
             }
             return "";
         }
@@ -90,5 +108,26 @@ namespace Proiect_frigider
 
             return description;
         }
+
+    
+        private static string getAllIngredients(Recipe recipe)
+        {
+            List<string> allIngredients = new List<string>();
+
+            foreach (Ingredient usedIngredient in recipe.usedIngredients)
+            {
+                allIngredients.Add(usedIngredient.name);
+            }
+
+            foreach (Ingredient missedIngredient in recipe.missedIngredients)
+            {
+                allIngredients.Add(missedIngredient.name);
+            }
+
+            string allIngredientsString = string.Join(",", allIngredients);
+            return allIngredientsString;
+        }
+
+
     }
 }

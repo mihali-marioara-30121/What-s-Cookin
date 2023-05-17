@@ -17,7 +17,6 @@ namespace Proiect_frigider
         }
         string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
-
         /*  private void button1_Click(object sender, EventArgs e)
           {
               //trebuie sa pun cod de verificare daca a introdus corect
@@ -118,7 +117,6 @@ namespace Proiect_frigider
             // Returnează true dacă numele de utilizator există deja, altfel false
             return count > 0;
         }
-
 
         private void textBox1_Click(object sender, EventArgs e)
         {

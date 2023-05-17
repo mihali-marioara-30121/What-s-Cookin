@@ -20,9 +20,8 @@ namespace Proiect_frigider
         public FormFirstPage()
         {
             InitializeComponent();
-            recipeDescription = new RecipeDescription(); 
             all_i = new All_ingredients(checkedListBox_selectedIngredients);
-            recipeDescription.Show();
+           // recipeDescription.Show();
             
         }
 
@@ -103,6 +102,7 @@ namespace Proiect_frigider
             bookmarks.Hide();
             login.Hide();
             tips.Hide();
+
           /*  if(recipesForm.ShowDialog() == DialogResult.OK) 
             { 
                 recipesForm.Hide();
@@ -181,9 +181,6 @@ namespace Proiect_frigider
         }
 
 
-
-
-
         private void button_CA_Click(object sender, EventArgs e)
         {
             checkedListBox_selectedIngredients.Items.Clear();
@@ -223,7 +220,7 @@ namespace Proiect_frigider
                 ingredientList.Substring(0, ingredientList.Length - 1);
                 List<Recipe> recipes = RecipeService.findRecipesByIngredients(ingredientList, 20);
                
-                recipesForm = new Recipes(recipes);
+                recipesForm = new Recipes(panel_main, recipes);
 
                 recipesForm.TopLevel = false;
                 panel_main.Controls.Add(recipesForm);
