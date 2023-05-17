@@ -63,10 +63,10 @@ namespace Proiect_frigider
                 MessageBox.Show("Autentificare reușită! Bine ați venit, " + username + "!");
                 this.label1.Text = "Hello " + username;
                 FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
-                MyProfile mp = Application.OpenForms.OfType<MyProfile>().FirstOrDefault();
+               // MyProfile mp = Application.OpenForms.OfType<MyProfile>().FirstOrDefault();
                
                 
-               mp.label1.Text = "HELLO " + username + " !";
+               //mp.label1.Text = "HELLO " + username + " !";
 
                 if (form1 != null)
                 {
@@ -105,5 +105,10 @@ namespace Proiect_frigider
             return count > 0;
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            textBox.UseSystemPasswordChar = !string.IsNullOrEmpty(textBox.Text);
+        }
     }
 }

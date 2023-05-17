@@ -90,10 +90,24 @@ namespace Proiect_frigider
         private void button_MyProfile_Click(object sender, EventArgs e)
         {
             // mp = new MyProfile();
-            mp.TopLevel = false;
-            panel_main.Controls.Add(mp);
-            mp.BringToFront();
-            mp.Show();
+         
+            if (label1.Text == "")
+            {
+                login.TopLevel = false;
+                panel_main.Controls.Add(login);
+                login.BringToFront();
+                login.Show();
+            }
+            else
+            {
+                mp.label1.Text =this.label1.Text;
+                mp.TopLevel = false;
+                panel_main.Controls.Add(mp);
+                mp.BringToFront();
+                mp.Show();
+
+             
+            }
         }
 
         private void pictureBox_logo_Click(object sender, EventArgs e)
@@ -102,6 +116,9 @@ namespace Proiect_frigider
             bookmarks.Hide();
             login.Hide();
             tips.Hide();
+            //panel_main.BringToFront();
+           // panel_main.Show();
+           // recipeDescription.Hide();
 
           /*  if(recipesForm.ShowDialog() == DialogResult.OK) 
             { 
@@ -117,10 +134,22 @@ namespace Proiect_frigider
         private void button_bookmarks_Click(object sender, EventArgs e)
         {
 
-            bookmarks.TopLevel = false;
-            panel_main.Controls.Add(bookmarks);
-            bookmarks.BringToFront();
-            bookmarks.Show();
+           
+            if (label1.Text == "")
+            {
+                login.TopLevel = false;
+                panel_main.Controls.Add(login);
+                login.BringToFront();
+                login.Show();
+            }
+            else
+            {
+                bookmarks.TopLevel = false;
+                panel_main.Controls.Add(bookmarks);
+                bookmarks.BringToFront();
+                bookmarks.Show();
+            }
+
         }
 
         private void button_login_Click(object sender, EventArgs e)

@@ -33,10 +33,10 @@ namespace Proiect_frigider
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_profile = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.button_changePassword = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel_profile.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,8 +80,20 @@ namespace Proiect_frigider
             this.panel_profile.Controls.Add(this.label2);
             this.panel_profile.Location = new System.Drawing.Point(249, 179);
             this.panel_profile.Name = "panel_profile";
-            this.panel_profile.Size = new System.Drawing.Size(402, 410);
+            this.panel_profile.Size = new System.Drawing.Size(530, 410);
             this.panel_profile.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(147, 187);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 32);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "EMAIL";
             // 
             // button_changePassword
             // 
@@ -100,7 +112,7 @@ namespace Proiect_frigider
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, 27);
+            this.label3.Location = new System.Drawing.Point(145, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(247, 44);
             this.label3.TabIndex = 5;
@@ -112,23 +124,11 @@ namespace Proiect_frigider
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(112, 126);
+            this.label2.Location = new System.Drawing.Point(147, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 32);
             this.label2.TabIndex = 4;
             this.label2.Text = "USERNAME";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(114, 189);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 32);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "EMAIL";
             // 
             // MyProfile
             // 
@@ -144,6 +144,7 @@ namespace Proiect_frigider
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MyProfile";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MyProfile_Load);
             this.panel_profile.ResumeLayout(false);
             this.panel_profile.PerformLayout();
             this.ResumeLayout(false);

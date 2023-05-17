@@ -61,7 +61,7 @@ namespace Proiect_frigider
                         {
                             FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
                             Login login = Application.OpenForms.OfType<Login>().FirstOrDefault();
-                            MyProfile mp = Application.OpenForms.OfType<MyProfile>().FirstOrDefault();
+                           // MyProfile mp = Application.OpenForms.OfType<MyProfile>().FirstOrDefault();
 
 
                             if (form1 != null)

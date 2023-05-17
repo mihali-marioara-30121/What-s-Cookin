@@ -100,6 +100,7 @@ namespace Proiect_frigider
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "PASSWORD";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 

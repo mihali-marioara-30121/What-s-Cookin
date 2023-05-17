@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Proiect_frigider
@@ -6,6 +8,9 @@ namespace Proiect_frigider
     public partial class MyProfile : Form
     {
         CHANGE_PASSWORD CP = new CHANGE_PASSWORD();
+        string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+
+
         public MyProfile()
         {
             InitializeComponent();
@@ -22,11 +27,39 @@ namespace Proiect_frigider
             CP.Show();
         }
 
-       /* private void MyProfile_Load(object sender, EventArgs e)
+        private void MyProfile_Load(object sender, EventArgs e)
         {
-            label1.Text = "Hello " + Username;
+            string labelText = label1.Text;
+            string[] words = labelText.Split(' ');
+            string alDoileaCuvant = words[1];
+            string username = string.Empty;
+            string email = string.Empty;
+
+            // Realizați interogarea către baza de date pentru a obține numele utilizatorului și adresa de email
+            string query = "SELECT nume_utilizator, email FROM Utilizator WHERE nume_utilizator = @username";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@username", alDoileaCuvant); // Utilizați alDoileaCuvant ca valoare pentru parametrul de interogare
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // Obțineți valorile corespunzătoare din baza de date
+                    username = reader.GetString(0);
+                    email = reader.GetString(1);
+                }
+
+                reader.Close();
+            }
+
+            // Actualizați valorile în label-uri
+            label2.Text = username;
+            label4.Text = email;
 
         }
-       */
+
     }
 }
