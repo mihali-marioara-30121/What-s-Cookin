@@ -50,12 +50,7 @@ namespace Proiect_frigider
 
         }
 
-       /* private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-            textBox.UseSystemPasswordChar = !string.IsNullOrEmpty(textBox.Text);
-        }
-       */
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
