@@ -69,7 +69,7 @@ namespace Proiect_frigider
                                 form1.label1.Text = "Hello " + textBox1.Text + " !";
                                 form1.button_login.Text = "Logout";
                                 login.label1.Text = "Hello " + username;
-                                mp.label1.Text = "HELLO " + username + " !";
+                            //    mp.label1.Text = "HELLO " + username + " !";
                             }
 
 

@@ -94,13 +94,10 @@ namespace Proiect_frigider
             {
                 // Open the ItemDetailsForm and pass the corresponding data
                 recipeDescription = new RecipeDescription(recipeDTOs);
-                //recipesPanel.Hide();
-                //recipeDescription.TopLevel = false;
-                //panel_main.Controls.Add(recipeDescription);
-                //recipeDescription.BringToFront();
-                //recipeDescription.Show();
-
-                recipeDescription.Show();
+                if (recipeDescription.hasDescription)
+                {
+                    recipeDescription.Show();
+                }
             };
         }
 

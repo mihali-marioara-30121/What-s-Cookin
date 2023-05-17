@@ -150,6 +150,9 @@
       <DependentUpon>RecipeDescription.cs</DependentUpon>
     </Compile>
     <Compile Include="RecipeDTO.cs" />
+    <Compile Include="RecipeInformation.cs" />
+    <Compile Include="RecipeInformationDTO.cs" />
+    <Compile Include="RecipeInformationService.cs" />
     <Compile Include="Recipes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +250,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="II_proiect.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="II_proiect_log.ldf">
+      <DependentUpon>II_proiect.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="What%27s_Cookin_BD.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

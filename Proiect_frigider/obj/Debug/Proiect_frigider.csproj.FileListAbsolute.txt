@@ -104,3 +104,5 @@ D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proie
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.csproj.CopyComplete
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.exe
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.pdb
+C:\Users\Marioara\Desktop\What's Cookin\What-s-Cookin\Proiect_frigider\bin\Debug\II_proiect.mdf
+C:\Users\Marioara\Desktop\What's Cookin\What-s-Cookin\Proiect_frigider\bin\Debug\II_proiect_log.ldf
