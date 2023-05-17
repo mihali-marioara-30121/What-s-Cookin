@@ -11,6 +11,9 @@ namespace Proiect_frigider
             InitializeComponent();
         }
 
+       // public string Username { get; set; }
+
+
         private void button_changePassword_Click(object sender, EventArgs e)
         {
             CP.TopLevel = false;
@@ -18,5 +21,12 @@ namespace Proiect_frigider
             CP.BringToFront();
             CP.Show();
         }
+
+       /* private void MyProfile_Load(object sender, EventArgs e)
+        {
+            label1.Text = "Hello " + Username;
+
+        }
+       */
     }
 }

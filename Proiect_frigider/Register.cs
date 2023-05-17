@@ -61,10 +61,16 @@ namespace Proiect_frigider
                         if (rowsAffected > 0)
                         {
                             FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
+                            Login login = Application.OpenForms.OfType<Login>().FirstOrDefault();
+                            MyProfile mp = Application.OpenForms.OfType<MyProfile>().FirstOrDefault();
+
+
                             if (form1 != null)
                             {
                                 form1.label1.Text = "Hello " + textBox1.Text + " !";
                                 form1.button_login.Text = "Logout";
+                                login.label1.Text = "Hello " + username;
+                                mp.label1.Text = "HELLO " + username + " !";
                             }
 
 

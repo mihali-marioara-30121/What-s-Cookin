@@ -88,6 +88,7 @@ namespace Proiect_frigider
             this.button1.TabIndex = 3;
             this.button1.Text = "LOGIN";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
@@ -98,6 +99,7 @@ namespace Proiect_frigider
             this.textBox2.Size = new System.Drawing.Size(189, 30);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "PASSWORD";
+            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // textBox1
             // 
@@ -109,6 +111,7 @@ namespace Proiect_frigider
             this.textBox1.Size = new System.Drawing.Size(189, 30);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "USERNAME";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // label1
             // 
@@ -142,11 +145,11 @@ namespace Proiect_frigider
         #endregion
 
         private System.Windows.Forms.Panel panel_login;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_register;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }

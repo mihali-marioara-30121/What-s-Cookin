@@ -7,8 +7,7 @@ namespace Proiect_frigider
 {
     public partial class FormFirstPage : Form
     {
-       // string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
-
+        // string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
         MyProfile mp = new MyProfile();
         Quick_ingredients quick_i = new Quick_ingredients();
         All_ingredients all_i; 
@@ -35,6 +34,7 @@ namespace Proiect_frigider
 
         private void FormFirstPage_Load(object sender, EventArgs e)
         {
+           // MyProfile mp = new MyProfile();
 
             quick_i.Owner = this;
             //register.Owner = this;
@@ -129,6 +129,16 @@ namespace Proiect_frigider
             panel_main.Controls.Add(login);
             login.BringToFront();
             login.Show();
+
+            if(button_login.Text == "Logout")
+            {
+                this.label1.Text = "";
+                Login login = Application.OpenForms.OfType<Login>().FirstOrDefault();
+                login.label1.Text = "LOGIN";
+                button_login.Text = "Login";
+                login.textBox1.Text = "USERNAME";
+                login.textBox2.Text = "PASSWORD";
+            }
         }
 
         private void button_tips_Click(object sender, EventArgs e)
