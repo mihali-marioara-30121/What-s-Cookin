@@ -61,8 +61,6 @@ C:\Users\Marioara\Desktop\What's Cookin\What-s-Cookin\Proiect_frigider\bin\Debug
 C:\Users\Marioara\Desktop\What's Cookin\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.csproj.CopyComplete
 C:\Users\Marioara\Desktop\What's Cookin\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.Recipes.resources
 C:\Users\Marioara\Desktop\What's Cookin\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.RecipeDescription.resources
-D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\bin\Debug\What's_Cookin_BD.mdf
-D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\bin\Debug\What's_Cookin_BD_log.ldf
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\bin\Debug\Proiect_frigider.exe.config
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\bin\Debug\Proiect_frigider.exe
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\bin\Debug\Proiect_frigider.pdb
@@ -104,11 +102,6 @@ D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proie
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.csproj.CopyComplete
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.exe
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.pdb
-<<<<<<< HEAD
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.csproj.AssemblyReference.cache
-=======
 C:\Users\Marioara\Desktop\What's Cookin\What-s-Cookin\Proiect_frigider\bin\Debug\II_proiect.mdf
 C:\Users\Marioara\Desktop\What's Cookin\What-s-Cookin\Proiect_frigider\bin\Debug\II_proiect_log.ldf
->>>>>>> 31c7e440ec62d3f749117c5f0bdd5cbaa6814fda
-D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\bin\Debug\II_proiect.mdf
-D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\bin\Debug\II_proiect_log.ldf
