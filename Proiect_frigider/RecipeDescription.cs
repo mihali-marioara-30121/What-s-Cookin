@@ -42,7 +42,7 @@ namespace Proiect_frigider
                 {
                     Image image = Image.FromStream(stream);
                     pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pictureBox.Location = new Point(250, 39);
+                    pictureBox.Location = new Point(549, 109);
                     pictureBox.Width = 550; 
                     pictureBox.Height = 300;
                     pictureBox.Image = image;
