@@ -219,6 +219,13 @@ namespace Proiect_frigider
             {
                 ingredientList.Substring(0, ingredientList.Length - 1);
                 List<Recipe> recipes = RecipeService.findRecipesByIngredients(ingredientList, 20);
+                //foreach (Recipe recipe in recipes)
+                //{
+                //   var recipeInformations = RecipeInformationService.GetRecipeInformation(recipe.id);
+                //   RecipeInformationDTO recipeInformationDTO = RecipeInformationService.extractNecessaryInformationFromCompleteRecipes(recipeInformations);
+
+                //}
+
                
                 recipesForm = new Recipes(panel_main, recipes);
 

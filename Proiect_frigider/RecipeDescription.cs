@@ -8,13 +8,26 @@ namespace Proiect_frigider
 {
     public partial class RecipeDescription : Form
     {
-        private RecipeDTO recipeDTO;
+        private RecipeInformation recipeInformation;
+        private RecipeInformationDTO recipeInformationDTO;
 
-        public RecipeDescription(RecipeDTO recipe)
+        public Boolean hasDescription = false;
+
+    public RecipeDescription(RecipeDTO recipe)
         {
             InitializeComponent();
-            recipeDTO = recipe;
-            setRecipeDetails(recipeDTO.image);
+            recipeInformation = RecipeInformationService.GetRecipeInformation(recipe.id);
+            if (recipeInformation != null)
+            {
+                hasDescription = true;
+                recipeInformationDTO = RecipeInformationService.extractNecessaryInformationFromCompleteRecipes(recipeInformation);
+                setRecipeDetails(recipeInformationDTO.image);
+            } else
+            {
+                hasDescription = false;
+                MessageBox.Show("Informations about the " + recipe.title + " are not available!");
+            }
+  
             // PopulateRecipeDetails();
         }
 
@@ -37,8 +50,22 @@ namespace Proiect_frigider
             }
 
             pictureBox.Show();
-            titleLabel.Text = recipeDTO.title;
-            descriptionLabel.Text = recipeDTO.description;
+            titleLabel.Text = recipeInformationDTO.title;
+            cookingTime_label.Text = "Cooking time: " + recipeInformationDTO.readyInMinutes.ToString() + " min";
+            servings_label.Text = "Servings: " + recipeInformationDTO.servings.ToString();
+
+            foreach(string ingredient in recipeInformationDTO.ingredientsList) { 
+                ingredients_listBox.Items.Add(ingredient);
+            }
+
+            if (recipeInformationDTO.instructions != null)
+            {
+                descriptionLabel.Text = recipeInformationDTO.instructions.ToString();
+            }
+               else
+            {
+                descriptionLabel.Text = "No instructions available!";
+            }
         }
 
 
@@ -60,6 +87,11 @@ namespace Proiect_frigider
         private void bookmarkButton_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("Recipe bookmarked!");
+        }
+
+        private void descriptionLabel_Click(object sender, EventArgs e)
+        {
+
         }
 
 

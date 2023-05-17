@@ -6,8 +6,8 @@ namespace Proiect_frigider
 {
     internal class RecipeService
     {
-            public static List<Recipe> findRecipesByIngredients(string ingredients, int number)
-            {
+        public static List<Recipe> findRecipesByIngredients(string ingredients, int number)
+        {
             var client = new RestClient("https://api.spoonacular.com");
             // We create a new instance of the RestSharp RestRequest class, passing in the Spoonacular API endpoint path "recipes/findByIngredients" as a parameter
             var request = new RestRequest("recipes/findByIngredients");
@@ -27,21 +27,20 @@ namespace Proiect_frigider
             return response.Data;
         }
 
+
         public static List<RecipeDTO> extractNecessaryInformationFromCompleteRecipes(List<Recipe> completeRecipes)
         {
-            List<RecipeDTO> recipeDTOs = new List<RecipeDTO>();    
+            List<RecipeDTO> recipeDTOs = new List<RecipeDTO>();
 
             foreach (Recipe recipe in completeRecipes)
             {
+                int id = recipe.id;
                 string title = recipe.title;
-                string description = generateDescription(recipe);
-                string ingredients = getAllIngredients(recipe);
                 string unusedIngredients = extractUnusedIngredients(recipe);
-                string usedIngredients = extractUsedIngredients(recipe);
                 string missedIngredients = extractMissedIngredients(recipe);
                 string image = recipe.image;
 
-                RecipeDTO recipeDTO = new RecipeDTO(title, description, image, ingredients, usedIngredients, unusedIngredients, missedIngredients);
+                RecipeDTO recipeDTO = new RecipeDTO(id, title, image, unusedIngredients, missedIngredients);
                 recipeDTOs.Add(recipeDTO);
             }
 
@@ -77,7 +76,7 @@ namespace Proiect_frigider
             {
                 return missedIngredients.Substring(0, missedIngredients.Length - 1);
             }
-            return "";  
+            return "";
         }
 
         private static string extractUnusedIngredients(Recipe recipe)
@@ -101,15 +100,15 @@ namespace Proiect_frigider
         {
             String description = "";
 
-            foreach(Ingredient ingredient in recipe.usedIngredients)
+            foreach (Ingredient ingredient in recipe.usedIngredients)
             {
-                description += " - " +ingredient.original + "\n";
+                description += " - " + ingredient.original + "\n";
             }
 
             return description;
         }
 
-    
+
         private static string getAllIngredients(Recipe recipe)
         {
             List<string> allIngredients = new List<string>();
