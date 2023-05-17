@@ -116,6 +116,7 @@ namespace Proiect_frigider
             bookmarks.Hide();
             login.Hide();
             tips.Hide();
+            recipesForm.Hide();
             //panel_main.BringToFront();
            // panel_main.Show();
            // recipeDescription.Hide();
