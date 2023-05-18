@@ -12,9 +12,12 @@ namespace Proiect_frigider
         private RecipeInformationDTO recipeInformationDTO;
 
         public Boolean hasDescription = false;
+        RecipeDTO recipeDTO;
+        Bookmarks bookmarks;
 
     public RecipeDescription(RecipeDTO recipe)
         {
+            recipeDTO = recipe;
             InitializeComponent();
             recipeInformation = RecipeInformationService.GetRecipeInformation(recipe.id);
             if (recipeInformation != null)
@@ -42,7 +45,7 @@ namespace Proiect_frigider
                 {
                     Image image = Image.FromStream(stream);
                     pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pictureBox.Location = new Point(549, 109);
+                    pictureBox.Location = new Point(130, 41);
                     pictureBox.Width = 550; 
                     pictureBox.Height = 300;
                     pictureBox.Image = image;
@@ -72,6 +75,12 @@ namespace Proiect_frigider
         private void BookmarkButton_Click(object sender, EventArgs e)
         {     
             MessageBox.Show("Recipe bookmarked!");
+            if (isUser)
+            {
+
+            }
+            bookmarks().Show();
+
         }
 
         private void recipeDescriptionPanel_Paint(object sender, PaintEventArgs e)
@@ -94,71 +103,5 @@ namespace Proiect_frigider
 
         }
 
-
-
-        //private void PopulateRecipeDetails()
-        //{
-        //    // Add comments text box
-        //    TextBox commentsTextBox = new TextBox();
-        //    commentsTextBox.Multiline = true;
-        //    commentsTextBox.ReadOnly = true;
-        //    commentsTextBox.ScrollBars = ScrollBars.Vertical;
-        //    commentsTextBox.Dock = DockStyle.Bottom;
-        //    commentsTextBox.Height = 150;
-        //    // Populate comments from the database or any other source
-        //    commentsTextBox.Text = GetCommentsFromDatabase();
-        //    recipeDescriptionPanel.Controls.Add(commentsTextBox);
-
-        //    //// Add ingredients list box
-        //    //ListBox ingredientsListBox = new ListBox();
-        //    //ingredientsListBox.Dock = DockStyle.Left;
-        //    //ingredientsListBox.Width = 200;
-        //    //ingredientsListBox.Items.Add("INGREDIENTS:");
-        //    //ingredientsListBox.Items.AddRange(recipeDTO.ingredients.Split(','));
-        //    //recipeDescriptionPanel.Controls.Add(ingredientsListBox);
-
-        //    // Add "BOOKMARK IT!" button
-        //    Button bookmarkButton = new Button();
-        //    bookmarkButton.Text = "BOOKMARK IT!";
-        //    bookmarkButton.Dock = DockStyle.Top;
-        //    bookmarkButton.Height = 50;
-        //    bookmarkButton.Width = 50;
-        //    bookmarkButton.Click += BookmarkButton_Click;
-        //    recipeDescriptionPanel.Controls.Add(bookmarkButton);
-
-        //    // Add description label
-        //    TextBox descriptionTextBox = new TextBox();
-        //    descriptionTextBox.Multiline = true;
-        //    descriptionTextBox.Text = recipeDTO.description;
-        //    descriptionTextBox.ReadOnly = true;
-        //    descriptionTextBox.BackColor = Color.White;
-        //    descriptionTextBox.BorderStyle = BorderStyle.None;
-        //    descriptionTextBox.Dock = DockStyle.Top;
-        //    descriptionTextBox.Height = 100;
-        //    recipeDescriptionPanel.Controls.Add(descriptionTextBox);
-
-        //    // Add title label
-        //    Label titleLabel = new Label();
-        //    titleLabel.Text = recipeDTO.title;
-        //    titleLabel.Font = new Font(titleLabel.Font, FontStyle.Bold);
-        //    titleLabel.AutoSize = true;
-        //    titleLabel.Dock = DockStyle.Top;
-        //    recipeDescriptionPanel.Controls.Add(titleLabel);
-
-        //    // Add picture box for recipe image
-        //    PictureBox recipeImage = GetRecipeImage(recipeDTO.image);
-        //    recipeImage.SizeMode = PictureBoxSizeMode.StretchImage;
-        //    recipeImage.Dock = DockStyle.Top;
-        //    recipeImage.Height = 200;
-        //    recipeImage.Width = 200;
-        //    recipeDescriptionPanel.Controls.Add(recipeImage);
-
-        //    // Add "Go Back" button
-        //    Button goBackButton = new Button();
-        //    goBackButton.Text = "Go Back";
-        //    goBackButton.Dock = DockStyle.Bottom;
-        //    goBackButton.Click += GoBackButton_Click;
-        //    recipeDescriptionPanel.Controls.Add(goBackButton);
-        //}
     }
 }
