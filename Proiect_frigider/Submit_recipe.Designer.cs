@@ -59,6 +59,7 @@ namespace Proiect_frigider
             this.textBox1.Size = new System.Drawing.Size(338, 30);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "RECIPE NAME";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox2
             // 
@@ -79,6 +80,7 @@ namespace Proiect_frigider
             this.textBox3.Size = new System.Drawing.Size(338, 30);
             this.textBox3.TabIndex = 3;
             this.textBox3.Text = "COOKING TIME(MINUTES)";
+            this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
             // 
             // textBox4
             // 
@@ -89,6 +91,7 @@ namespace Proiect_frigider
             this.textBox4.Size = new System.Drawing.Size(338, 30);
             this.textBox4.TabIndex = 4;
             this.textBox4.Text = "SERVINGS";
+            this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
             // 
             // textBox5
             // 
@@ -99,6 +102,7 @@ namespace Proiect_frigider
             this.textBox5.Size = new System.Drawing.Size(338, 30);
             this.textBox5.TabIndex = 5;
             this.textBox5.Text = "INGREDIENT LIST";
+            this.textBox5.Click += new System.EventHandler(this.textBox5_Click);
             // 
             // textBox6
             // 
@@ -109,6 +113,7 @@ namespace Proiect_frigider
             this.textBox6.Size = new System.Drawing.Size(338, 30);
             this.textBox6.TabIndex = 6;
             this.textBox6.Text = "INSTRUCTIONS";
+            this.textBox6.Click += new System.EventHandler(this.textBox6_Click);
             // 
             // button1
             // 
@@ -121,6 +126,7 @@ namespace Proiect_frigider
             this.button1.TabIndex = 7;
             this.button1.Text = "SUBMIT";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -129,12 +135,13 @@ namespace Proiect_frigider
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(345, 180);
+            this.button2.Location = new System.Drawing.Point(454, 180);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 35);
+            this.button2.Size = new System.Drawing.Size(133, 35);
             this.button2.TabIndex = 8;
             this.button2.Text = "BROWSE";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Submit_recipe
             // 
