@@ -60,6 +60,7 @@ namespace Proiect_frigider
             // Verifică dacă utilizatorul și parola corespund
             if (VerifyCredentials(username, password))
             {
+                UserContext.username = username;
                 MessageBox.Show("Autentificare reușită! Bine ați venit, " + username + "!");
                 this.label1.Text = "Hello " + username;
                 FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();

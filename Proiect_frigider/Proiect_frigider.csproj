@@ -191,6 +191,7 @@
       <DependentUpon>Tips_descriere.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="UserContext.cs" />
     <Compile Include="UserService.cs" />
     <EmbeddedResource Include="All_ingredients.resx">
       <DependentUpon>All_ingredients.cs</DependentUpon>

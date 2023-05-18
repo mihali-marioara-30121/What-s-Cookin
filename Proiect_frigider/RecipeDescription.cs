@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Net;
@@ -14,8 +16,10 @@ namespace Proiect_frigider
         public Boolean hasDescription = false;
         RecipeDTO recipeDTO;
         Bookmarks bookmarks;
+        string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
-    public RecipeDescription(RecipeDTO recipe)
+
+        public RecipeDescription(RecipeDTO recipe)
         {
             recipeDTO = recipe;
             InitializeComponent();
@@ -72,36 +76,109 @@ namespace Proiect_frigider
         }
 
 
-        private void BookmarkButton_Click(object sender, EventArgs e)
-        {     
-           /* MessageBox.Show("Recipe bookmarked!");
-            if (isUser)
-            {
+        /*  private void BookmarkButton_Click(object sender, EventArgs e)
+          {     
+              MessageBox.Show("Recipe bookmarked!");
+              if (isUser)
+              {
 
-            }
-            bookmarks().Show();
-           */
-        }
+              }
+              bookmarks().Show();
 
-        private void recipeDescriptionPanel_Paint(object sender, PaintEventArgs e)
-        {
+          }
 
-        }
+          private void recipeDescriptionPanel_Paint(object sender, PaintEventArgs e)
+          {
 
+          }
+
+         
+
+          private void bookmarkButton_Click_1(object sender, EventArgs e)
+          {
+              MessageBox.Show("Recipe bookmarked!");
+          }
+
+          private void descriptionLabel_Click(object sender, EventArgs e)
+          {
+
+          }
+        */
         private string GetCommentsFromDatabase()
         {
             return "User1: Great recipe!\r\nUser2: I loved it!\r\nUser3: Delicious!";
         }
 
-        private void bookmarkButton_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Recipe bookmarked!");
-        }
-
-        private void descriptionLabel_Click(object sender, EventArgs e)
+        private void bookmarkButton_Click(object sender, EventArgs e)
         {
 
+            int idUser = getUserIdByUsername(UserContext.username);
+            int idRetetaApi = recipeDTO.id;
+
+            if (!(idUser > 0 && idRetetaApi > 0))
+            {
+                MessageBox.Show("Something went wrong trying to bookmark this recipe!");
+                return;
+            }
+
+            Boolean successfullyAddedBookmark = addBookmarkToCurrentRecipe(idUser, idRetetaApi);
+
+            if (!successfullyAddedBookmark)
+            {
+                MessageBox.Show("Bookmark couldn't be added!");
+                return;
+            }
+
+            MessageBox.Show("Successfully added bookmark!");
         }
 
+        private bool addBookmarkToCurrentRecipe(int idUser, int idRetetaApi)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO retete_preferate (id_user, id_reteta_api) VALUES (@idUser, @idRetetaApi)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idUser", idUser);
+                    command.Parameters.AddWithValue("@idRetetaApi", idRetetaApi);
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        return true;
+                    }
+
+                    return false;
+                }
+            }
+        }
+
+        private int getUserIdByUsername(string username)
+        {
+            string query = "Select * FROM Utilizator WHERE nume_utilizator = @username";
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+
+            if (username != null)
+            {
+                command.Parameters.Add("@username", username);
+            }
+
+            SqlDataReader reader = command.ExecuteReader();
+            
+
+            while (reader.Read())
+            {
+                return reader.GetInt32(0);
+            }
+
+            return -1;
+            connection.Close();
+        }
+
+        
     }
 }

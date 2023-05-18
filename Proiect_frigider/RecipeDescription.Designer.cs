@@ -32,6 +32,7 @@ namespace Proiect_frigider
         private void InitializeComponent()
         {
             this.recipeDescriptionPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.ingredients_listBox = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.servings_label = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@ namespace Proiect_frigider
             this.titleLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.recipeDescriptionPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +63,16 @@ namespace Proiect_frigider
             this.recipeDescriptionPanel.Name = "recipeDescriptionPanel";
             this.recipeDescriptionPanel.Size = new System.Drawing.Size(918, 683);
             this.recipeDescriptionPanel.TabIndex = 0;
-            this.recipeDescriptionPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.recipeDescriptionPanel_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(365, 1023);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 29);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Instructions:";
             // 
             // ingredients_listBox
             // 
@@ -114,7 +123,7 @@ namespace Proiect_frigider
             this.bookmarkButton.TabIndex = 3;
             this.bookmarkButton.Text = "BOOKMARK IT!";
             this.bookmarkButton.UseVisualStyleBackColor = true;
-            this.bookmarkButton.Click += new System.EventHandler(this.bookmarkButton_Click_1);
+            this.bookmarkButton.Click += new System.EventHandler(this.bookmarkButton_Click);
             // 
             // titleLabel
             // 
@@ -137,7 +146,6 @@ namespace Proiect_frigider
             this.descriptionLabel.Size = new System.Drawing.Size(192, 29);
             this.descriptionLabel.TabIndex = 1;
             this.descriptionLabel.Text = "descriptionLabel";
-            this.descriptionLabel.Click += new System.EventHandler(this.descriptionLabel_Click);
             // 
             // pictureBox
             // 
@@ -146,16 +154,6 @@ namespace Proiect_frigider
             this.pictureBox.Size = new System.Drawing.Size(564, 377);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(365, 1023);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 29);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Instructions:";
             // 
             // RecipeDescription
             // 
