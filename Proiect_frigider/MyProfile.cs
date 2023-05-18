@@ -9,7 +9,8 @@ namespace Proiect_frigider
     {
         CHANGE_PASSWORD CP = new CHANGE_PASSWORD();
         string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
-
+        Submit_recipe sr = new Submit_recipe();
+        My_recipes mr = new My_recipes();
 
         public MyProfile()
         {
@@ -61,5 +62,18 @@ namespace Proiect_frigider
 
         }
 
+        //submit a recipe
+        private void button2_Click(object sender, EventArgs e)
+        {
+             sr.Show();
+          
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            sr.Hide();
+
+            mr.Show();
+        }
     }
 }

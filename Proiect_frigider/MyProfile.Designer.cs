@@ -37,6 +37,8 @@ namespace Proiect_frigider
             this.button_changePassword = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel_profile.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +51,7 @@ namespace Proiect_frigider
             this.button2.TabIndex = 1;
             this.button2.Text = "SUBMIT A RECIPE";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -59,6 +62,7 @@ namespace Proiect_frigider
             this.button3.TabIndex = 2;
             this.button3.Text = "MY RECIPES";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -74,13 +78,15 @@ namespace Proiect_frigider
             // panel_profile
             // 
             this.panel_profile.BackColor = System.Drawing.Color.White;
+            this.panel_profile.Controls.Add(this.label6);
+            this.panel_profile.Controls.Add(this.label5);
             this.panel_profile.Controls.Add(this.label4);
             this.panel_profile.Controls.Add(this.button_changePassword);
             this.panel_profile.Controls.Add(this.label3);
             this.panel_profile.Controls.Add(this.label2);
-            this.panel_profile.Location = new System.Drawing.Point(249, 179);
+            this.panel_profile.Location = new System.Drawing.Point(125, 179);
             this.panel_profile.Name = "panel_profile";
-            this.panel_profile.Size = new System.Drawing.Size(530, 410);
+            this.panel_profile.Size = new System.Drawing.Size(699, 410);
             this.panel_profile.TabIndex = 4;
             // 
             // label4
@@ -89,7 +95,7 @@ namespace Proiect_frigider
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(147, 187);
+            this.label4.Location = new System.Drawing.Point(260, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 32);
             this.label4.TabIndex = 7;
@@ -112,7 +118,7 @@ namespace Proiect_frigider
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(145, 27);
+            this.label3.Location = new System.Drawing.Point(229, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(247, 44);
             this.label3.TabIndex = 5;
@@ -124,11 +130,31 @@ namespace Proiect_frigider
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(147, 127);
+            this.label2.Location = new System.Drawing.Point(254, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 32);
             this.label2.TabIndex = 4;
             this.label2.Text = "USERNAME";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(53, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(174, 32);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "USERNAME";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(112, 187);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 32);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "EMAIL";
             // 
             // MyProfile
             // 
@@ -161,5 +187,7 @@ namespace Proiect_frigider
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
