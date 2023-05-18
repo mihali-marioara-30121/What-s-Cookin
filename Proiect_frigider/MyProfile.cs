@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Proiect_frigider
@@ -9,7 +11,7 @@ namespace Proiect_frigider
     {
         CHANGE_PASSWORD CP = new CHANGE_PASSWORD();
         string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
-        Submit_recipe sr = new Submit_recipe();
+        Submit_recipe sr;
         My_recipes mr = new My_recipes();
 
         public MyProfile()
@@ -17,7 +19,7 @@ namespace Proiect_frigider
             InitializeComponent();
         }
 
-       // public string Username { get; set; }
+        // public string Username { get; set; }
 
 
         private void button_changePassword_Click(object sender, EventArgs e)
@@ -30,6 +32,8 @@ namespace Proiect_frigider
 
         private void MyProfile_Load(object sender, EventArgs e)
         {
+
+
             string labelText = label1.Text;
             string[] words = labelText.Split(' ');
             string alDoileaCuvant = words[1];
@@ -65,15 +69,33 @@ namespace Proiect_frigider
         //submit a recipe
         private void button2_Click(object sender, EventArgs e)
         {
-             sr.Show();
-          
+            sr = new Submit_recipe();
+
+            sr.BringToFront();
+            sr.Show();
+           
+
         }
+
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
-            sr.Close();
+            if (mr == null || mr.IsDisposed)
+            {
+                // Forma 'mr' nu există sau a fost închisă, creăm o nouă instanță
+                mr = new My_recipes();
+            }
 
+            // Aducem forma 'mr' în față și o afișăm
+            mr.BringToFront();
             mr.Show();
+
+            
         }
+
+
+
     }
 }

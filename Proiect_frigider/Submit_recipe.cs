@@ -109,6 +109,15 @@ namespace Proiect_frigider
 
                     // Afisati un mesaj de succes
                     MessageBox.Show("Reteta a fost adaugata cu succes!");
+
+                    this.Hide();
+                    textBox1.Text = "RECIPE NAME";
+                    textBox2.Text = "UPLOAD A FILE";
+                    textBox3.Text = "COOKING TIME(MINUTES)";
+                    textBox4.Text = "SERVINGS";
+                    textBox5.Text = "INGREDIENT LIST";
+                    textBox4.Text = "INSTRUCTIONS";
+
                 }
             }
         }
