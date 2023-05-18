@@ -28,7 +28,7 @@ namespace Proiect_frigider
         int count = 0;
         int yPos = 50; // Starting Y position for the first label
         int spacing = 25; // Vertical spacing between labels and checkbox lists
-        int xPos = 10;
+        int xPos = 50;
         
         List<RecipeDTO> recipeDTOs = RecipeService.extractNecessaryInformationFromCompleteRecipes(recipes);
 
@@ -42,8 +42,8 @@ namespace Proiect_frigider
                 xPos += 350;
             } else
             {
-                xPos = 10;
-                yPos += 230;
+                xPos = 50;
+                yPos += 180;
             }
         }
     }
@@ -63,24 +63,27 @@ namespace Proiect_frigider
         // Create the label for the recipe
         Label recipeTitle = new Label();
         recipeTitle.Text = recipeDTOs.title;
-        recipeTitle.Font = new Font(recipeTitle.Font, FontStyle.Bold);
+        recipeTitle.Font = new Font(recipeTitle.Font, FontStyle.Bold); 
         recipeTitle.AutoSize = false;
-        recipeTitle.Location = new Point(xPos, yPos + 125);
+        recipeTitle.Size = new Size(200, 30);
+        recipeTitle.Location = new Point(xPos - 40, yPos + 110 );
 
         // Create the missedIngredients section
         Label missedIngredients = new Label();
         missedIngredients.Text = "Missed ingredients: " + recipeDTOs.missedIngredients;
         missedIngredients.AutoSize = false;
-        missedIngredients = resizedLabel(missedIngredients, maxWidth);  
-        missedIngredients.Location = new Point(xPos, yPos + 145);
+        missedIngredients.Size = new Size(200, 50);
+       // missedIngredients = resizedLabel(missedIngredients, maxWidth);  
+        missedIngredients.Location = new Point(xPos -40, yPos +140 );
 
          // Create the missedIngredients section
         Label unusedIngredients = new Label();
         unusedIngredients.Text = "Unused ingredients: " + recipeDTOs.unusedIngredients;
         unusedIngredients.AutoSize = false;
-        unusedIngredients.Location = new Point(xPos, yPos + 175);
+        unusedIngredients.Size = new Size(200, 20);
+        unusedIngredients.Location = new Point(xPos - 40, yPos+ 190);
          
-         unusedIngredients = resizedLabel(unusedIngredients, maxWidth);
+        //unusedIngredients = resizedLabel(unusedIngredients, maxWidth);
             
          missedIngredientsRowsGrew = false;
          recipesPanel.Controls.Add(recipeImage);

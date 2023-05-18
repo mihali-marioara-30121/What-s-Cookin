@@ -32,15 +32,15 @@ namespace Proiect_frigider
         private void InitializeComponent()
         {
             this.recipeDescriptionPanel = new System.Windows.Forms.Panel();
+            this.ingredients_listBox = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.servings_label = new System.Windows.Forms.Label();
+            this.cookingTime_label = new System.Windows.Forms.Label();
             this.bookmarkButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cookingTime_label = new System.Windows.Forms.Label();
-            this.servings_label = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ingredients_listBox = new System.Windows.Forms.ListBox();
             this.recipeDescriptionPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -49,26 +49,66 @@ namespace Proiect_frigider
             // 
             this.recipeDescriptionPanel.AutoScroll = true;
             this.recipeDescriptionPanel.AutoScrollMargin = new System.Drawing.Size(0, 700);
-            this.recipeDescriptionPanel.AutoScrollMinSize = new System.Drawing.Size(0, 683);
             this.recipeDescriptionPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.recipeDescriptionPanel.Controls.Add(this.label1);
             this.recipeDescriptionPanel.Controls.Add(this.ingredients_listBox);
             this.recipeDescriptionPanel.Controls.Add(this.label4);
             this.recipeDescriptionPanel.Controls.Add(this.servings_label);
             this.recipeDescriptionPanel.Controls.Add(this.cookingTime_label);
-            this.recipeDescriptionPanel.Controls.Add(this.label1);
             this.recipeDescriptionPanel.Controls.Add(this.bookmarkButton);
             this.recipeDescriptionPanel.Controls.Add(this.titleLabel);
             this.recipeDescriptionPanel.Controls.Add(this.descriptionLabel);
             this.recipeDescriptionPanel.Controls.Add(this.pictureBox);
-            this.recipeDescriptionPanel.Location = new System.Drawing.Point(41, 52);
+            this.recipeDescriptionPanel.Location = new System.Drawing.Point(282, 52);
             this.recipeDescriptionPanel.Name = "recipeDescriptionPanel";
-            this.recipeDescriptionPanel.Size = new System.Drawing.Size(1333, 683);
+            this.recipeDescriptionPanel.Size = new System.Drawing.Size(918, 683);
             this.recipeDescriptionPanel.TabIndex = 0;
             this.recipeDescriptionPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.recipeDescriptionPanel_Paint);
             // 
+            // ingredients_listBox
+            // 
+            this.ingredients_listBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ingredients_listBox.ColumnWidth = 100;
+            this.ingredients_listBox.FormattingEnabled = true;
+            this.ingredients_listBox.ItemHeight = 16;
+            this.ingredients_listBox.Location = new System.Drawing.Point(31, 712);
+            this.ingredients_listBox.Name = "ingredients_listBox";
+            this.ingredients_listBox.Size = new System.Drawing.Size(843, 288);
+            this.ingredients_listBox.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(368, 671);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 29);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Ingredients:";
+            // 
+            // servings_label
+            // 
+            this.servings_label.AutoSize = true;
+            this.servings_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servings_label.Location = new System.Drawing.Point(369, 628);
+            this.servings_label.Name = "servings_label";
+            this.servings_label.Size = new System.Drawing.Size(116, 20);
+            this.servings_label.TabIndex = 6;
+            this.servings_label.Text = "servings_label";
+            // 
+            // cookingTime_label
+            // 
+            this.cookingTime_label.AutoSize = true;
+            this.cookingTime_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cookingTime_label.Location = new System.Drawing.Point(354, 592);
+            this.cookingTime_label.Name = "cookingTime_label";
+            this.cookingTime_label.Size = new System.Drawing.Size(147, 20);
+            this.cookingTime_label.TabIndex = 5;
+            this.cookingTime_label.Text = "cookingTime_label";
+            // 
             // bookmarkButton
             // 
-            this.bookmarkButton.Location = new System.Drawing.Point(538, 738);
+            this.bookmarkButton.Location = new System.Drawing.Point(358, 520);
             this.bookmarkButton.Name = "bookmarkButton";
             this.bookmarkButton.Size = new System.Drawing.Size(138, 56);
             this.bookmarkButton.TabIndex = 3;
@@ -79,81 +119,43 @@ namespace Proiect_frigider
             // titleLabel
             // 
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(411, 442);
+            this.titleLabel.Location = new System.Drawing.Point(134, 443);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(635, 46);
             this.titleLabel.TabIndex = 2;
             this.titleLabel.Text = "titleLabel";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.BackColor = System.Drawing.Color.White;
-            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(448, 508);
-            this.descriptionLabel.MaximumSize = new System.Drawing.Size(400, 666666);
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(38, 1065);
+            this.descriptionLabel.MaximumSize = new System.Drawing.Size(800, 666666);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(254, 38);
+            this.descriptionLabel.Size = new System.Drawing.Size(192, 29);
             this.descriptionLabel.TabIndex = 1;
             this.descriptionLabel.Text = "descriptionLabel";
             this.descriptionLabel.Click += new System.EventHandler(this.descriptionLabel_Click);
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(419, 15);
+            this.pictureBox.Location = new System.Drawing.Point(164, 41);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(627, 399);
+            this.pictureBox.Size = new System.Drawing.Size(564, 377);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 35);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(365, 1023);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 32);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Details section";
-            // 
-            // cookingTime_label
-            // 
-            this.cookingTime_label.AutoSize = true;
-            this.cookingTime_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cookingTime_label.Location = new System.Drawing.Point(49, 90);
-            this.cookingTime_label.Name = "cookingTime_label";
-            this.cookingTime_label.Size = new System.Drawing.Size(147, 20);
-            this.cookingTime_label.TabIndex = 5;
-            this.cookingTime_label.Text = "cookingTime_label";
-            // 
-            // servings_label
-            // 
-            this.servings_label.AutoSize = true;
-            this.servings_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.servings_label.Location = new System.Drawing.Point(49, 127);
-            this.servings_label.Name = "servings_label";
-            this.servings_label.Size = new System.Drawing.Size(116, 20);
-            this.servings_label.TabIndex = 6;
-            this.servings_label.Text = "servings_label";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(49, 189);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Ingredients:";
-            // 
-            // ingredients_listBox
-            // 
-            this.ingredients_listBox.FormattingEnabled = true;
-            this.ingredients_listBox.ItemHeight = 16;
-            this.ingredients_listBox.Location = new System.Drawing.Point(53, 212);
-            this.ingredients_listBox.Name = "ingredients_listBox";
-            this.ingredients_listBox.Size = new System.Drawing.Size(194, 276);
-            this.ingredients_listBox.TabIndex = 8;
+            this.label1.Size = new System.Drawing.Size(140, 29);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Instructions:";
             // 
             // RecipeDescription
             // 
