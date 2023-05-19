@@ -9,10 +9,10 @@ namespace Proiect_frigider
     public partial class Register : Form
     {
         // FormFirstPage f = new FormFirstPage();
-       // public FormFirstPage f;
+        // public FormFirstPage f;
+
         public Register()
         {
-           
             InitializeComponent();
         }
         string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
@@ -75,6 +75,10 @@ namespace Proiect_frigider
 
                             //f.label1.Text = "Hello " + textBox1.Text;
                           //  ((FormFirstPage)this.Owner).label1.Text = "Hello " + textBox1.Text; 
+
+                           UserContext.username = username;
+                           UserContext.id = UserService.GetUserIdByName(UserContext.username); 
+
                             MessageBox.Show("Utilizatorul a fost înregistrat cu succes!");
                             textBox1.Text = "USERNAME";
                             textBox2.Text = "EMAIL";

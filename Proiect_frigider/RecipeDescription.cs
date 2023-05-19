@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -12,27 +13,37 @@ namespace Proiect_frigider
     {
         private RecipeInformation recipeInformation;
         private RecipeInformationDTO recipeInformationDTO;
-
         public Boolean hasDescription = false;
         RecipeDTO recipeDTO;
         Bookmarks bookmarks;
+        
         string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
 
-        public RecipeDescription(RecipeDTO recipe)
+        public RecipeDescription(RecipeDTO recipe, RecipeInformationDTO recipeInformationDTO)
         {
-            recipeDTO = recipe;
             InitializeComponent();
-            recipeInformation = RecipeInformationService.GetRecipeInformation(recipe.id);
-            if (recipeInformation != null)
+            if (recipeInformationDTO == null)
+            {
+                recipeDTO = recipe;
+                recipeInformation = RecipeInformationService.GetRecipeInformation(recipe.id);
+
+                if (recipeInformation != null)
+                {
+                    hasDescription = true;
+                    recipeInformationDTO = RecipeInformationService.extractNecessaryInformationFromCompleteRecipes(recipeInformation);
+                    setRecipeDetails(recipeInformationDTO.image);
+                }
+                else
+                {
+                    hasDescription = false;
+                    MessageBox.Show("Informations about the " + recipe.title + " are not available!");
+                }
+            }
+            else if (recipe == null)
             {
                 hasDescription = true;
-                recipeInformationDTO = RecipeInformationService.extractNecessaryInformationFromCompleteRecipes(recipeInformation);
                 setRecipeDetails(recipeInformationDTO.image);
-            } else
-            {
-                hasDescription = false;
-                MessageBox.Show("Informations about the " + recipe.title + " are not available!");
             }
   
             // PopulateRecipeDetails();
@@ -49,7 +60,7 @@ namespace Proiect_frigider
                 {
                     Image image = Image.FromStream(stream);
                     pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pictureBox.Location = new Point(130, 41);
+                    pictureBox.Location = new Point(90, 41);
                     pictureBox.Width = 550; 
                     pictureBox.Height = 300;
                     pictureBox.Image = image;
@@ -75,52 +86,36 @@ namespace Proiect_frigider
             }
         }
 
-
-        /*  private void BookmarkButton_Click(object sender, EventArgs e)
-          {     
-              MessageBox.Show("Recipe bookmarked!");
-              if (isUser)
-              {
-
-              }
-              bookmarks().Show();
-
-          }
-
-          private void recipeDescriptionPanel_Paint(object sender, PaintEventArgs e)
-          {
-
-          }
-
-         
-
-          private void bookmarkButton_Click_1(object sender, EventArgs e)
-          {
-              MessageBox.Show("Recipe bookmarked!");
-          }
-
-          private void descriptionLabel_Click(object sender, EventArgs e)
-          {
-
-          }
-        */
-        private string GetCommentsFromDatabase()
-        {
-            return "User1: Great recipe!\r\nUser2: I loved it!\r\nUser3: Delicious!";
-        }
-
         private void bookmarkButton_Click(object sender, EventArgs e)
-        {
+       {
+            
+            if (UserContext.username == null)
+            { 
+                MessageBox.Show("You must log in to add bookmarks!!");
+                return;
+            }
 
-            int idUser = getUserIdByUsername(UserContext.username);
+            string currentUsername = UserContext.username;
+            int idUser = UserContext.id;
             int idRetetaApi = recipeDTO.id;
 
-            if (!(idUser > 0 && idRetetaApi > 0))
+            if (!(idRetetaApi > 0))
             {
                 MessageBox.Show("Something went wrong trying to bookmark this recipe!");
                 return;
             }
 
+            List<Bookmark> bookmarksList = BookmarkService.GetBookmarksByUserId(idUser);
+
+            foreach(Bookmark bookmark in bookmarksList)
+            {
+                if (bookmark.id_reteta_api == idRetetaApi)
+                {
+                    MessageBox.Show("Recipe already added to bookmarks!");
+                    return;
+                }
+            }
+           
             Boolean successfullyAddedBookmark = addBookmarkToCurrentRecipe(idUser, idRetetaApi);
 
             if (!successfullyAddedBookmark)
@@ -130,6 +125,7 @@ namespace Proiect_frigider
             }
 
             MessageBox.Show("Successfully added bookmark!");
+            bookmarkButton.Text = "BOOKMARKED!";
         }
 
         private bool addBookmarkToCurrentRecipe(int idUser, int idRetetaApi)
@@ -154,31 +150,28 @@ namespace Proiect_frigider
                 }
             }
         }
+        //private int getUserIdByUsername(string username)
+        //{
+        //    string query = "Select * FROM Utilizator WHERE nume_utilizator = @username";
+        //    SqlConnection connection = new SqlConnection(connectionString);
+        //    SqlCommand command = new SqlCommand(query, connection);
+        //    connection.Open();
 
-        private int getUserIdByUsername(string username)
-        {
-            string query = "Select * FROM Utilizator WHERE nume_utilizator = @username";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            connection.Open();
+        //    if (username != null)
+        //    {
+        //        command.Parameters.Add("@username", username);
+        //    }
 
-            if (username != null)
-            {
-                command.Parameters.Add("@username", username);
-            }
+        //    SqlDataReader reader = command.ExecuteReader();
 
-            SqlDataReader reader = command.ExecuteReader();
-            
 
-            while (reader.Read())
-            {
-                return reader.GetInt32(0);
-            }
+        //    while (reader.Read())
+        //    {
+        //        return reader.GetInt32(0);
+        //    }
 
-            return -1;
-            connection.Close();
-        }
-
-        
+        //    return -1;
+        //    connection.Close();
+        //}
     }
 }

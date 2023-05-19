@@ -8,41 +8,40 @@ using System.Threading.Tasks;
 
 namespace Proiect_frigider
 {
-    internal class UserService
+   
+    public static class UserService
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+        public static int GetUserIdByName(string username)
+        {
+            int id = -1;
 
-        //static User GetUserDetails(int userId)
-        //{
-        //    User user = null;
+            string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
-        //    using (SqlConnection connection = new SqlConnection(connectionString))
-        //    {
-        //        string query = "SELECT id, parola, nume_utilizator, email FROM UserTable WHERE id = @UserId";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM Utilizator WHERE nume_utilizator = @username";
 
-        //        using (SqlCommand command = new SqlCommand(query, connection))
-        //        {
-        //            command.Parameters.AddWithValue("@UserId", userId);
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    if (username != null)
+                    {
+                        command.Parameters.AddWithValue("@username", username);
+                    }
+                    connection.Open();
 
-        //            connection.Open();
-        //            SqlDataReader reader = command.ExecuteReader();
+                    SqlDataReader reader = command.ExecuteReader();
 
-        //            if (reader.Read())
-        //            {
-        //                user = new User
-        //                {
-        //                    Id = reader.GetInt32(0),
-        //                    Parola = reader.GetString(1),
-        //                    NumeUtilizator = reader.GetString(2),
-        //                    Email = reader.GetString(3)
-        //                };
-        //            }
+                    if (reader.Read())
+                    {
+                        id = reader.GetInt32(0);
+                    }
+                    reader.Close();
+                    //connection.Close();
+                }
+                return id;
 
-        //            reader.Close();
-        //        }
-        //    }
+            }
 
-        //    return user;
-        //}
+        }
     }
 }

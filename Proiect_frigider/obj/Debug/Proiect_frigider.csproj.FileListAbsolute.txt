@@ -103,11 +103,9 @@ D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proie
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.exe
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.pdb
 C:\Users\Marioara\Desktop\What's Cookin\What-s-Cookin\Proiect_frigider\bin\Debug\II_proiect.mdf
-C:\Users\Marioara\Desktop\What's Cookin\What-s-Cookin\Proiect_frigider\bin\Debug\II_proiect_log.ldf
-<<<<<<< HEAD
+C:\Users\Marioara\Desktop\What's Cookin\What-s-Cookin\Proiect_frigider\bin\Debug\II_proiect_log.ld
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.Submit_recipe.resources
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.My_recipes.resources
-=======
 C:\Users\Marioara\Desktop\II_proiect\What-s-Cookin\Proiect_frigider\bin\Debug\What's_Cookin_BD.mdf
 C:\Users\Marioara\Desktop\II_proiect\What-s-Cookin\Proiect_frigider\bin\Debug\What's_Cookin_BD_log.ldf
 C:\Users\Marioara\Desktop\II_proiect\What-s-Cookin\Proiect_frigider\bin\Debug\Proiect_frigider.exe.config
@@ -153,5 +151,6 @@ C:\Users\Marioara\Desktop\II_proiect\What-s-Cookin\Proiect_frigider\obj\Debug\Pr
 C:\Users\Marioara\Desktop\II_proiect\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.csproj.CopyComplete
 C:\Users\Marioara\Desktop\II_proiect\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.exe
 C:\Users\Marioara\Desktop\II_proiect\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.pdb
->>>>>>> c906628d1c16ede059536cf99946141f7764c141
 D:\Facultate AC\An3\Sem2\II\Proiect_frigider_ultima varianta\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.csproj.AssemblyReference.cache
+C:\Users\Marioara\Desktop\II_proiect\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.My_recipes.resources
+C:\Users\Marioara\Desktop\II_proiect\What-s-Cookin\Proiect_frigider\obj\Debug\Proiect_frigider.Submit_recipe.resources

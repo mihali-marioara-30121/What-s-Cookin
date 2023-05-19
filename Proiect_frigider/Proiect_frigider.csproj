@@ -103,12 +103,14 @@
     <Compile Include="All_ingredients.Designer.cs">
       <DependentUpon>All_ingredients.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bookmark.cs" />
     <Compile Include="Bookmarks.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bookmarks.Designer.cs">
       <DependentUpon>Bookmarks.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookmarkService.cs" />
     <Compile Include="CHANGE PASSWORD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +271,14 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="What%27s_Cookin_BD.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="What%27s_Cookin_BD_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

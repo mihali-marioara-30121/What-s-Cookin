@@ -11,7 +11,7 @@ namespace Proiect_frigider
         MyProfile mp = new MyProfile();
         Quick_ingredients quick_i = new Quick_ingredients();
         All_ingredients all_i; 
-        Bookmarks bookmarks = new Bookmarks();
+        Bookmarks bookmarks;
         Login login = new Login();
         Tips tips = new Tips();
         Recipes recipesForm;
@@ -139,7 +139,6 @@ namespace Proiect_frigider
         private void button_bookmarks_Click(object sender, EventArgs e)
         {
 
-           
             if (label1.Text == "")
             {
                 login.TopLevel = false;
@@ -149,6 +148,7 @@ namespace Proiect_frigider
             }
             else
             {
+                bookmarks = new Bookmarks(UserContext.id);
                 bookmarks.TopLevel = false;
                 panel_main.Controls.Add(bookmarks);
                 bookmarks.BringToFront();

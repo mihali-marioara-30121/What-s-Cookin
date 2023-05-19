@@ -96,7 +96,7 @@ namespace Proiect_frigider
             recipeImage.Click += (sender, e) =>
             {
                 // Open the ItemDetailsForm and pass the corresponding data
-                recipeDescription = new RecipeDescription(recipeDTOs);
+                recipeDescription = new RecipeDescription(recipeDTOs, null);
                 if (recipeDescription.hasDescription)
                 {
                     recipeDescription.Show();
@@ -104,26 +104,26 @@ namespace Proiect_frigider
             };
         }
 
-        private Label resizedLabel(Label label, int maxWidth)
-        {
-            Size textSize = TextRenderer.MeasureText(label.Text, label.Font);
+        //private Label resizedLabel(Label label, int maxWidth)
+        //{
+        //    Size textSize = TextRenderer.MeasureText(label.Text, label.Font);
 
-            // Check if the text exceeds the maximum width
-            if (textSize.Width > maxWidth)
-            {
-                // Calculate the number of lines required
-                int lines = (int)Math.Ceiling((double)textSize.Width / maxWidth);
+        //    // Check if the text exceeds the maximum width
+        //    if (textSize.Width > maxWidth)
+        //    {
+        //        // Calculate the number of lines required
+        //        int lines = (int)Math.Ceiling((double)textSize.Width / maxWidth);
 
-                // Set the label size to wrap the text
-                label.Size = new Size(maxWidth, label.Font.Height * lines);
-            }
-            else
-            {
-                // Set the label size to fit the text
-                label.Size = textSize;
-            }
-            return label;
-        }
+        //        // Set the label size to wrap the text
+        //        label.Size = new Size(maxWidth, label.Font.Height * lines);
+        //    }
+        //    else
+        //    {
+        //        // Set the label size to fit the text
+        //        label.Size = textSize;
+        //    }
+        //    return label;
+        //}
 
         private PictureBox getRecipeImage(string imageUrl, int xPos, int yPos)
         {
