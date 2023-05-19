@@ -43,10 +43,10 @@ namespace Proiect_frigider
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(231, 37);
+            this.label1.Font = new System.Drawing.Font("MV Boli", 12F);
+            this.label1.Location = new System.Drawing.Point(199, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 25);
+            this.label1.Size = new System.Drawing.Size(191, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "SUBMIT A RECIPE";
             // 
@@ -118,9 +118,9 @@ namespace Proiect_frigider
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("MV Boli", 12F);
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(236, 531);
+            this.button1.Location = new System.Drawing.Point(215, 526);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 50);
             this.button1.TabIndex = 7;
@@ -133,11 +133,11 @@ namespace Proiect_frigider
             this.button2.AutoSize = true;
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("MV Boli", 12F);
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button2.Location = new System.Drawing.Point(454, 180);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 35);
+            this.button2.Size = new System.Drawing.Size(133, 36);
             this.button2.TabIndex = 8;
             this.button2.Text = "BROWSE";
             this.button2.UseVisualStyleBackColor = false;

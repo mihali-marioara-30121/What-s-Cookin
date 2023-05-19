@@ -59,7 +59,7 @@ namespace Proiect_frigider
             // button_changePassword
             // 
             this.button_changePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button_changePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_changePassword.Font = new System.Drawing.Font("MV Boli", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_changePassword.Location = new System.Drawing.Point(73, 242);
             this.button_changePassword.Name = "button_changePassword";
             this.button_changePassword.Size = new System.Drawing.Size(206, 65);

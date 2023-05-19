@@ -37,7 +37,6 @@ namespace Proiect_frigider
             this.panel2 = new System.Windows.Forms.Panel();
             this.button_tips = new System.Windows.Forms.Button();
             this.button_bookmarks = new System.Windows.Forms.Button();
-            this.textBox_Search = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button_CS = new System.Windows.Forms.Button();
             this.checkedListBox_selectedIngredients = new System.Windows.Forms.CheckedListBox();
@@ -66,8 +65,8 @@ namespace Proiect_frigider
             // button_login
             // 
             this.button_login.BackColor = System.Drawing.Color.White;
-            this.button_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_login.Location = new System.Drawing.Point(1147, 15);
+            this.button_login.Font = new System.Drawing.Font("MV Boli", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_login.Location = new System.Drawing.Point(1242, 15);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(139, 68);
             this.button_login.TabIndex = 7;
@@ -81,7 +80,7 @@ namespace Proiect_frigider
             this.pictureBox_logo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_logo.Image")));
             this.pictureBox_logo.Location = new System.Drawing.Point(3, 3);
             this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(164, 92);
+            this.pictureBox_logo.Size = new System.Drawing.Size(177, 100);
             this.pictureBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_logo.TabIndex = 6;
             this.pictureBox_logo.TabStop = false;
@@ -90,10 +89,11 @@ namespace Proiect_frigider
             // button_MyProfile
             // 
             this.button_MyProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button_MyProfile.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_MyProfile.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_MyProfile.Location = new System.Drawing.Point(204, 28);
+            this.button_MyProfile.Location = new System.Drawing.Point(289, 15);
             this.button_MyProfile.Name = "button_MyProfile";
-            this.button_MyProfile.Size = new System.Drawing.Size(125, 51);
+            this.button_MyProfile.Size = new System.Drawing.Size(162, 69);
             this.button_MyProfile.TabIndex = 10;
             this.button_MyProfile.Text = "MY PROFILE";
             this.button_MyProfile.UseVisualStyleBackColor = false;
@@ -106,7 +106,6 @@ namespace Proiect_frigider
             this.panel2.Controls.Add(this.button_bookmarks);
             this.panel2.Controls.Add(this.pictureBox_logo);
             this.panel2.Controls.Add(this.button_MyProfile);
-            this.panel2.Controls.Add(this.textBox_Search);
             this.panel2.Controls.Add(this.button_login);
             this.panel2.Location = new System.Drawing.Point(1, -3);
             this.panel2.Name = "panel2";
@@ -116,9 +115,10 @@ namespace Proiect_frigider
             // button_tips
             // 
             this.button_tips.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button_tips.Location = new System.Drawing.Point(466, 28);
+            this.button_tips.Font = new System.Drawing.Font("MV Boli", 12F);
+            this.button_tips.Location = new System.Drawing.Point(766, 15);
             this.button_tips.Name = "button_tips";
-            this.button_tips.Size = new System.Drawing.Size(125, 51);
+            this.button_tips.Size = new System.Drawing.Size(162, 69);
             this.button_tips.TabIndex = 13;
             this.button_tips.Text = "TIPS";
             this.button_tips.UseVisualStyleBackColor = false;
@@ -127,22 +127,14 @@ namespace Proiect_frigider
             // button_bookmarks
             // 
             this.button_bookmarks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button_bookmarks.Location = new System.Drawing.Point(335, 28);
+            this.button_bookmarks.Font = new System.Drawing.Font("MV Boli", 12F);
+            this.button_bookmarks.Location = new System.Drawing.Point(527, 15);
             this.button_bookmarks.Name = "button_bookmarks";
-            this.button_bookmarks.Size = new System.Drawing.Size(125, 51);
+            this.button_bookmarks.Size = new System.Drawing.Size(162, 69);
             this.button_bookmarks.TabIndex = 12;
             this.button_bookmarks.Text = "BOOKMARKS";
             this.button_bookmarks.UseVisualStyleBackColor = false;
             this.button_bookmarks.Click += new System.EventHandler(this.button_bookmarks_Click);
-            // 
-            // textBox_Search
-            // 
-            this.textBox_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Search.Location = new System.Drawing.Point(764, 35);
-            this.textBox_Search.Name = "textBox_Search";
-            this.textBox_Search.Size = new System.Drawing.Size(235, 30);
-            this.textBox_Search.TabIndex = 5;
-            this.textBox_Search.Text = "Search";
             // 
             // panel4
             // 
@@ -160,9 +152,10 @@ namespace Proiect_frigider
             // button_CS
             // 
             this.button_CS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button_CS.Font = new System.Drawing.Font("MV Boli", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_CS.Location = new System.Drawing.Point(3, 57);
             this.button_CS.Name = "button_CS";
-            this.button_CS.Size = new System.Drawing.Size(148, 25);
+            this.button_CS.Size = new System.Drawing.Size(148, 34);
             this.button_CS.TabIndex = 10;
             this.button_CS.Text = "CLEAR SELECTED";
             this.button_CS.UseVisualStyleBackColor = false;
@@ -179,9 +172,10 @@ namespace Proiect_frigider
             // button_CA
             // 
             this.button_CA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button_CA.Font = new System.Drawing.Font("MV Boli", 10F);
             this.button_CA.Location = new System.Drawing.Point(175, 57);
             this.button_CA.Name = "button_CA";
-            this.button_CA.Size = new System.Drawing.Size(116, 25);
+            this.button_CA.Size = new System.Drawing.Size(116, 34);
             this.button_CA.TabIndex = 8;
             this.button_CA.Text = "CLEAR ALL";
             this.button_CA.UseVisualStyleBackColor = false;
@@ -190,7 +184,8 @@ namespace Proiect_frigider
             // findRecipeButton
             // 
             this.findRecipeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.findRecipeButton.Location = new System.Drawing.Point(91, 433);
+            this.findRecipeButton.Font = new System.Drawing.Font("MV Boli", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findRecipeButton.Location = new System.Drawing.Point(86, 428);
             this.findRecipeButton.Name = "findRecipeButton";
             this.findRecipeButton.Size = new System.Drawing.Size(141, 39);
             this.findRecipeButton.TabIndex = 7;
@@ -201,6 +196,7 @@ namespace Proiect_frigider
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label3.Font = new System.Drawing.Font("MV Boli", 12F);
             this.label3.Location = new System.Drawing.Point(-3, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(306, 50);
@@ -211,7 +207,7 @@ namespace Proiect_frigider
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button9.Location = new System.Drawing.Point(1160, 281);
+            this.button9.Location = new System.Drawing.Point(1160, 196);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(207, 72);
             this.button9.TabIndex = 12;
@@ -296,18 +292,20 @@ namespace Proiect_frigider
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(204, 9);
+            this.label2.Font = new System.Drawing.Font("MV Boli", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(96, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 17);
+            this.label2.Size = new System.Drawing.Size(496, 37);
             this.label2.TabIndex = 1;
             this.label2.Text = "WHAT\'S IN YOUR FRIDGE TODAY?\r\n";
             // 
             // label_kitchen
             // 
             this.label_kitchen.AutoSize = true;
+            this.label_kitchen.Font = new System.Drawing.Font("MV Boli", 12F);
             this.label_kitchen.Location = new System.Drawing.Point(11, 73);
             this.label_kitchen.Name = "label_kitchen";
-            this.label_kitchen.Size = new System.Drawing.Size(113, 17);
+            this.label_kitchen.Size = new System.Drawing.Size(170, 26);
             this.label_kitchen.TabIndex = 0;
             this.label_kitchen.Text = "QUICK KITCHEN\r\n";
             // 
@@ -315,10 +313,11 @@ namespace Proiect_frigider
             // 
             this.button_ingredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.button_ingredients.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_ingredients.Location = new System.Drawing.Point(347, 69);
+            this.button_ingredients.Font = new System.Drawing.Font("MV Boli", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ingredients.Location = new System.Drawing.Point(272, 69);
             this.button_ingredients.Margin = new System.Windows.Forms.Padding(0);
             this.button_ingredients.Name = "button_ingredients";
-            this.button_ingredients.Size = new System.Drawing.Size(309, 25);
+            this.button_ingredients.Size = new System.Drawing.Size(438, 37);
             this.button_ingredients.TabIndex = 5;
             this.button_ingredients.Text = "CLICK HERE FOR MORE INGREDIENTS";
             this.button_ingredients.UseVisualStyleBackColor = false;
@@ -336,7 +335,6 @@ namespace Proiect_frigider
             this.Load += new System.EventHandler(this.FormFirstPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel_main.ResumeLayout(false);
             this.panel_main.PerformLayout();
@@ -368,7 +366,6 @@ namespace Proiect_frigider
         private System.Windows.Forms.Button button_ingredients;
         private System.Windows.Forms.Button button_bookmarks;
         private System.Windows.Forms.Button button_tips;
-        private System.Windows.Forms.TextBox textBox_Search;
         public System.Windows.Forms.CheckedListBox checkedListBox_selectedIngredients;
         private System.Windows.Forms.Button button_CS;
         public System.Windows.Forms.Label label1;

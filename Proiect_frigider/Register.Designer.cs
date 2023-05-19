@@ -40,10 +40,10 @@ namespace Proiect_frigider
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("MV Boli", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(110, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 38);
+            this.label1.Size = new System.Drawing.Size(184, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTER";
             // 
@@ -61,10 +61,10 @@ namespace Proiect_frigider
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(162, 375);
+            this.button1.Font = new System.Drawing.Font("MV Boli", 12F);
+            this.button1.Location = new System.Drawing.Point(147, 368);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 41);
+            this.button1.Size = new System.Drawing.Size(111, 46);
             this.button1.TabIndex = 2;
             this.button1.Text = "SUBMIT";
             this.button1.UseVisualStyleBackColor = false;

@@ -67,10 +67,10 @@ namespace Proiect_frigider
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(365, 1023);
+            this.label1.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 1026);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 29);
+            this.label1.Size = new System.Drawing.Size(162, 29);
             this.label1.TabIndex = 9;
             this.label1.Text = "Instructions:";
             // 
@@ -88,38 +88,42 @@ namespace Proiect_frigider
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(368, 671);
+            this.label4.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(41, 671);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 29);
+            this.label4.Size = new System.Drawing.Size(150, 29);
             this.label4.TabIndex = 7;
             this.label4.Text = "Ingredients:";
             // 
             // servings_label
             // 
             this.servings_label.AutoSize = true;
-            this.servings_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.servings_label.Location = new System.Drawing.Point(380, 640);
+            this.servings_label.Font = new System.Drawing.Font("MV Boli", 12F);
+            this.servings_label.Location = new System.Drawing.Point(368, 636);
             this.servings_label.Name = "servings_label";
-            this.servings_label.Size = new System.Drawing.Size(116, 20);
+            this.servings_label.Size = new System.Drawing.Size(132, 26);
             this.servings_label.TabIndex = 6;
             this.servings_label.Text = "servings_label";
             // 
             // cookingTime_label
             // 
             this.cookingTime_label.AutoSize = true;
-            this.cookingTime_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cookingTime_label.Location = new System.Drawing.Point(360, 605);
+            this.cookingTime_label.Font = new System.Drawing.Font("MV Boli", 12F);
+            this.cookingTime_label.Location = new System.Drawing.Point(346, 596);
             this.cookingTime_label.Name = "cookingTime_label";
-            this.cookingTime_label.Size = new System.Drawing.Size(147, 20);
+            this.cookingTime_label.Size = new System.Drawing.Size(173, 26);
             this.cookingTime_label.TabIndex = 5;
             this.cookingTime_label.Text = "cookingTime_label";
             // 
             // bookmarkButton
             // 
-            this.bookmarkButton.Location = new System.Drawing.Point(364, 537);
+            this.bookmarkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bookmarkButton.Font = new System.Drawing.Font("MV Boli", 12F);
+            this.bookmarkButton.Location = new System.Drawing.Point(342, 543);
             this.bookmarkButton.Name = "bookmarkButton";
-            this.bookmarkButton.Size = new System.Drawing.Size(138, 56);
+            this.bookmarkButton.Size = new System.Drawing.Size(186, 41);
             this.bookmarkButton.TabIndex = 3;
             this.bookmarkButton.Text = "BOOKMARK IT!";
             this.bookmarkButton.UseVisualStyleBackColor = true;
@@ -127,7 +131,7 @@ namespace Proiect_frigider
             // 
             // titleLabel
             // 
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(90, 419);
             this.titleLabel.MaximumSize = new System.Drawing.Size(731, 100);
             this.titleLabel.Name = "titleLabel";
