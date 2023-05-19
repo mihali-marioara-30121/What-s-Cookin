@@ -14,16 +14,18 @@ namespace Proiect_frigider
         private RecipeInformation recipeInformation;
         private RecipeInformationDTO recipeInformationDTO;
         public Boolean hasDescription = false;
-        RecipeDTO recipeDTO;
-        Bookmarks bookmarks;
+        private Boolean isBookmark = false;
+        private RecipeDTO recipeDTO;
+        private Bookmarks bookmarks;
+       
         
         string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
 
-        public RecipeDescription(RecipeDTO recipe, RecipeInformationDTO recipeInformationDTO)
-        {
+        public RecipeDescription(RecipeDTO recipe, RecipeInformationDTO bookmarkRecipe)
+        {    
             InitializeComponent();
-            if (recipeInformationDTO == null)
+            if (bookmarkRecipe == null)
             {
                 recipeDTO = recipe;
                 recipeInformation = RecipeInformationService.GetRecipeInformation(recipe.id);
@@ -41,8 +43,11 @@ namespace Proiect_frigider
                 }
             }
             else if (recipe == null)
-            {
+            {  
+                isBookmark = true;
+                bookmarkButton.Text = "DELETE BOOKMARK!";
                 hasDescription = true;
+                recipeInformationDTO = bookmarkRecipe;
                 setRecipeDetails(recipeInformationDTO.image);
             }
   
@@ -88,6 +93,22 @@ namespace Proiect_frigider
 
         private void bookmarkButton_Click(object sender, EventArgs e)
        {
+            if (isBookmark)
+            {
+                isBookmark = false;
+                Boolean succsesfullyDeletedBookmark = BookmarkService.deleteBookmark(UserContext.id, recipeInformationDTO.id);
+                
+                    if (!succsesfullyDeletedBookmark)
+                    {
+                        MessageBox.Show("Bookmark couldn't be deleted!");
+                        return;
+                    }
+
+                MessageBox.Show("Bookmark deleted successfully!");
+
+                bookmarkButton.Text = "BOOKMARK IT!";
+                return;
+            }
             
             if (UserContext.username == null)
             { 

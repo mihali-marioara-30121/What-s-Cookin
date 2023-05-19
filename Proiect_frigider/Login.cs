@@ -56,6 +56,8 @@ namespace Proiect_frigider
         {
             string username = textBox1.Text;
             string password = textBox2.Text;
+            //string username = "mari";
+            //string password = "parola";
 
             // Verifică dacă utilizatorul și parola corespund
             if (VerifyCredentials(username, password))

@@ -53,12 +53,12 @@ namespace Proiect_frigider
 
                 if (count % 3 != 0)
                 {
-                    xPos += 350;
+                    xPos += 250;
                 }
                 else
                 {
                     xPos = 50;
-                    yPos += 180;
+                    yPos += 150;
                 }
             }
         }
@@ -73,7 +73,6 @@ namespace Proiect_frigider
             }
             // Add image on the top
             PictureBox recipeImage = getRecipeImage(recipeInformationDTO.image, xPos, yPos);
-            int maxWidth = 300;
 
             // Create the label for the recipe
             Label recipeTitle = new Label();
@@ -95,6 +94,7 @@ namespace Proiect_frigider
                 if (recipeDescription.hasDescription)
                 {
                     recipeDescription.Show();
+
                 }
             };
         }

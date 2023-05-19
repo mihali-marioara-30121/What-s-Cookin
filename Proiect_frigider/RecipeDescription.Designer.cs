@@ -99,7 +99,7 @@ namespace Proiect_frigider
             // 
             this.servings_label.AutoSize = true;
             this.servings_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.servings_label.Location = new System.Drawing.Point(369, 628);
+            this.servings_label.Location = new System.Drawing.Point(380, 640);
             this.servings_label.Name = "servings_label";
             this.servings_label.Size = new System.Drawing.Size(116, 20);
             this.servings_label.TabIndex = 6;
@@ -109,7 +109,7 @@ namespace Proiect_frigider
             // 
             this.cookingTime_label.AutoSize = true;
             this.cookingTime_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cookingTime_label.Location = new System.Drawing.Point(354, 592);
+            this.cookingTime_label.Location = new System.Drawing.Point(360, 605);
             this.cookingTime_label.Name = "cookingTime_label";
             this.cookingTime_label.Size = new System.Drawing.Size(147, 20);
             this.cookingTime_label.TabIndex = 5;
@@ -117,7 +117,7 @@ namespace Proiect_frigider
             // 
             // bookmarkButton
             // 
-            this.bookmarkButton.Location = new System.Drawing.Point(358, 520);
+            this.bookmarkButton.Location = new System.Drawing.Point(364, 537);
             this.bookmarkButton.Name = "bookmarkButton";
             this.bookmarkButton.Size = new System.Drawing.Size(138, 56);
             this.bookmarkButton.TabIndex = 3;
@@ -128,9 +128,10 @@ namespace Proiect_frigider
             // titleLabel
             // 
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(134, 443);
+            this.titleLabel.Location = new System.Drawing.Point(90, 419);
+            this.titleLabel.MaximumSize = new System.Drawing.Size(731, 100);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(635, 46);
+            this.titleLabel.Size = new System.Drawing.Size(731, 46);
             this.titleLabel.TabIndex = 2;
             this.titleLabel.Text = "titleLabel";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,7 +150,7 @@ namespace Proiect_frigider
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(164, 41);
+            this.pictureBox.Location = new System.Drawing.Point(183, 30);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(564, 377);
             this.pictureBox.TabIndex = 0;

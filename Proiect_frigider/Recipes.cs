@@ -48,8 +48,8 @@ namespace Proiect_frigider
         }
     }
 
-    private void populateUI(RecipeDTO recipeDTOs, int xPos, int yPos, int spacing)
-    {
+        private void populateUI(RecipeDTO recipeDTOs, int xPos, int yPos, int spacing)
+        {
 
             if (recipeDTOs == null)
             {
@@ -58,38 +58,53 @@ namespace Proiect_frigider
             }
             // Add image on the top
             PictureBox recipeImage = getRecipeImage(recipeDTOs.image, xPos, yPos);
-        int maxWidth = 300;
+            int maxWidth = 300;
 
-        // Create the label for the recipe
-        Label recipeTitle = new Label();
-        recipeTitle.Text = recipeDTOs.title;
-        recipeTitle.Font = new Font(recipeTitle.Font, FontStyle.Bold); 
-        recipeTitle.AutoSize = false;
-        recipeTitle.Size = new Size(200, 30);
-        recipeTitle.Location = new Point(xPos - 40, yPos + 110 );
+            // Create the label for the recipe
+            Label recipeTitle = new Label();
+            recipeTitle.Text = recipeDTOs.title;
+            recipeTitle.Font = new Font(recipeTitle.Font, FontStyle.Bold);
+            recipeTitle.AutoSize = false;
+            recipeTitle.Size = new Size(200, 30);
+            recipeTitle.Location = new Point(xPos - 40, yPos + 110);
 
-        // Create the missedIngredients section
-        Label missedIngredients = new Label();
-        missedIngredients.Text = "Missed ingredients: " + recipeDTOs.missedIngredients;
-        missedIngredients.AutoSize = false;
-        missedIngredients.Size = new Size(200, 50);
-       // missedIngredients = resizedLabel(missedIngredients, maxWidth);  
-        missedIngredients.Location = new Point(xPos -40, yPos +140 );
+            // Create the missedIngredients section
+            Label missedIngredients = new Label();
+            if (recipeDTOs.missedIngredients != "")
+            {
+                missedIngredients.Text = "Missed ingredients: " + recipeDTOs.missedIngredients;
+            }
+            else
+            {
+                missedIngredients.Text = " You have all ingredients! :D";
+            }
+            missedIngredients.AutoSize = false;
+            missedIngredients.Size = new Size(200, 50);
+            // missedIngredients = resizedLabel(missedIngredients, maxWidth);  
+            missedIngredients.Location = new Point(xPos - 40, yPos + 140);
 
-         // Create the missedIngredients section
-        Label unusedIngredients = new Label();
-        unusedIngredients.Text = "Unused ingredients: " + recipeDTOs.unusedIngredients;
-        unusedIngredients.AutoSize = false;
-        unusedIngredients.Size = new Size(200, 20);
-        unusedIngredients.Location = new Point(xPos - 40, yPos+ 190);
-         
-        //unusedIngredients = resizedLabel(unusedIngredients, maxWidth);
+            // Create the missedIngredients section
+            Label unusedIngredients = new Label();
+            if (recipeDTOs.unusedIngredients != "")
+            {
+                unusedIngredients.Text = "Unused ingredients: " + recipeDTOs.unusedIngredients;
+            }
+            else
+            {
+                unusedIngredients.Text = "All ingredients are used! :D";
+            }
+            unusedIngredients.AutoSize = false;
+            unusedIngredients.Size = new Size(200, 20);
+            unusedIngredients.Location = new Point(xPos - 40, yPos + 190);
+
+            //unusedIngredients = resizedLabel(unusedIngredients, maxWidth);
+
+            missedIngredientsRowsGrew = false;
+            recipesPanel.Controls.Add(recipeImage);
+            recipesPanel.Controls.Add(recipeTitle);
+            recipesPanel.Controls.Add(missedIngredients);
+            recipesPanel.Controls.Add(unusedIngredients);
             
-         missedIngredientsRowsGrew = false;
-         recipesPanel.Controls.Add(recipeImage);
-         recipesPanel.Controls.Add(recipeTitle);
-         recipesPanel.Controls.Add(missedIngredients);
-         recipesPanel.Controls.Add(unusedIngredients);
 
             //on click event
 

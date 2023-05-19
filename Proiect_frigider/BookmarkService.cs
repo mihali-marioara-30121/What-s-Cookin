@@ -42,5 +42,30 @@ namespace Proiect_frigider
                 return listBookmarks;
             }
         }
+
+        public static bool deleteBookmark(int idUser, int idRetetaApi)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM retete_preferate WHERE  id_user = @idUser AND id_reteta_api = @idRetetaApi";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idUser", idUser);
+                    command.Parameters.AddWithValue("@idRetetaApi", idRetetaApi);
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        return true;
+                    }
+
+                    return false;
+                }
+            }
+        }
     }
 }
