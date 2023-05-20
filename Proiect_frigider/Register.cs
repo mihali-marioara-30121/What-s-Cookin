@@ -77,7 +77,7 @@ namespace Proiect_frigider
 
                             if (form1 != null)
                             {
-                                form1.label1.Text = "Hello " + textBox1.Text + " !";
+                                form1.helloLabel.Text = "Hello " + textBox1.Text + " !";
                                 form1.button_login.Text = "Logout";
                                 login.label1.Text = "Hello " + username;
                             //    mp.label1.Text = "HELLO " + username + " !";
@@ -88,6 +88,7 @@ namespace Proiect_frigider
                           //  ((FormFirstPage)this.Owner).label1.Text = "Hello " + textBox1.Text; 
 
                            UserContext.username = username;
+                            UserContext.password = password;
                            UserContext.id = UserService.GetUserIdByName(UserContext.username); 
 
                             MessageBox.Show("Utilizatorul a fost înregistrat cu succes!");

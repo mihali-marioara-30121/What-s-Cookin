@@ -63,6 +63,7 @@ namespace Proiect_frigider
             if (VerifyCredentials(username, password))
             {
                 UserContext.username = username;
+                UserContext.password = password;
                 UserContext.id = UserService.GetUserIdByName(UserContext.username);
 
                 MessageBox.Show("Autentificare reușită! Bine ați venit, " + username + "!");

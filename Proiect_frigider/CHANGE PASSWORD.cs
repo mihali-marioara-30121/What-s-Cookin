@@ -25,8 +25,15 @@ namespace Proiect_frigider
             string newPassword = textBox1.Text;
             string confirmPassword = textBox2.Text;
 
+          
+
             if (newPassword == confirmPassword)
             {
+                if (newPassword.Equals(UserContext.password))
+                {
+                    MessageBox.Show("The new password cannot be the same as the old one!");
+                    return;
+                }
                 // Actualizați parola în baza de date
                 string query = "UPDATE Utilizator SET parola = @newPassword WHERE nume_utilizator = @username";
                 using (SqlConnection connection = new SqlConnection(connectionString))

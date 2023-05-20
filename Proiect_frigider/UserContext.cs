@@ -10,6 +10,7 @@ namespace Proiect_frigider
     public static class UserContext
     {
         public static string username { get; set; }
+        public static string password { get; set; }
         public static int id { get; set; }
     }
 }
