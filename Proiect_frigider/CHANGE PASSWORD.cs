@@ -18,9 +18,10 @@ namespace Proiect_frigider
         {
             FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
 
-            string labelText = form1.label1.Text;
-            string[] words = labelText.Split(' ');
-            string alDoileaCuvant = words[1];
+            //string labelText = form1.label1.Text;
+            //string[] words = labelText.Split(' ');
+            //string alDoileaCuvant = words[1];
+            string alDoileaCuvant = UserContext.username;
             string newPassword = textBox1.Text;
             string confirmPassword = textBox2.Text;
 

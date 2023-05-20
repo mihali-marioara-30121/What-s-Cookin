@@ -34,9 +34,10 @@ namespace Proiect_frigider
         {
 
 
-            string labelText = label1.Text;
-            string[] words = labelText.Split(' ');
-            string alDoileaCuvant = words[1];
+            //string labelText = helloLabel.Text;
+            //string[] words = labelText.Split(' ');
+            //string alDoileaCuvant = words[1];
+            string alDoileaCuvant = UserContext.username;
             string username = string.Empty;
             string email = string.Empty;
 

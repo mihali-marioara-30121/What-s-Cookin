@@ -31,6 +31,17 @@ namespace Proiect_frigider
             string password = textBox3.Text;
             string confirmPassword = textBox4.Text;
 
+            Boolean verifyUsername = isTextBoxComplete(textBox1, "USERNAME");
+            Boolean verifyEmail = isTextBoxComplete(textBox2, "EMAIL");
+            Boolean verifyPassword = isTextBoxComplete(textBox3, null);
+            Boolean verifyConfirmPassword = isTextBoxComplete(textBox4, null);
+
+            if (!(verifyUsername && verifyPassword && verifyEmail && verifyConfirmPassword))
+            {
+                MessageBox.Show("All fields must be completed!");
+                return;
+            }
+
             if (password == confirmPassword)
             {
                 // Crează o conexiune la baza de date utilizând cheia de conexiune din App.config
@@ -125,6 +136,7 @@ namespace Proiect_frigider
         private void textBox1_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
+
         }
 
         private void textBox2_Click(object sender, EventArgs e)
@@ -153,6 +165,23 @@ namespace Proiect_frigider
         {
             TextBox textBox = (TextBox)sender;
             textBox.UseSystemPasswordChar = !string.IsNullOrEmpty(textBox.Text);
+        }
+
+        private Boolean isTextBoxComplete(TextBox textBox, string initialValue)
+        {
+            if(textBox.Text == null)
+            {
+                return false; ;
+            }
+            if (textBox.Text == "")
+            {
+                return false; ;
+            }
+            if (textBox.Text == initialValue)
+            {
+                return false; ;
+            }
+            return true;
         }
     }
 }

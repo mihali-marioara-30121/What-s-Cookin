@@ -42,7 +42,7 @@ namespace Proiect_frigider
             string extractedContent;
 
             // Remove the <ol> and </ol> tags
-            if (instructions.Contains("<li>") && instructions.Contains("</li>"))
+            if (instructions != null && instructions.Contains("<li>") && instructions.Contains("</li>"))
             {
               cleanedDescription = Regex.Replace(instructions, @"<[/]?ol>", "");
 

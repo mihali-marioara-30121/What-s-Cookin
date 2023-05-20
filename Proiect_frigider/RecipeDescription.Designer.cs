@@ -117,13 +117,11 @@ namespace Proiect_frigider
             // 
             // bookmarkButton
             // 
-            this.bookmarkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bookmarkButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bookmarkButton.Font = new System.Drawing.Font("MV Boli", 12F);
             this.bookmarkButton.Location = new System.Drawing.Point(342, 543);
             this.bookmarkButton.Name = "bookmarkButton";
-            this.bookmarkButton.Size = new System.Drawing.Size(186, 41);
+            this.bookmarkButton.Size = new System.Drawing.Size(186, 50);
             this.bookmarkButton.TabIndex = 3;
             this.bookmarkButton.Text = "BOOKMARK IT!";
             this.bookmarkButton.UseVisualStyleBackColor = true;

@@ -24,14 +24,14 @@ namespace Proiect_frigider
         {
             panel_all_ingredients.Controls.Clear();
             int count = 1;
-            int yPos = 10; // Starting Y position for the first label
+            int yPos = 5; // Starting Y position for the first label
             int spacing = 25; // Vertical spacing between labels and checkbox lists
 
             List<string> categoriiDistinct = obtineInformatiiDinBD(queryCategoriiDistincte, null);
 
             foreach (string categorie in categoriiDistinct)
             {
-                int xPos = 10;
+                int xPos = 20;
                 List<string> ingredienteCategorie = obtineInformatiiDinBD(queryIngredienteDupaCategorie, categorie);
                 if (count % 2 == 0)
                 {
@@ -54,7 +54,7 @@ namespace Proiect_frigider
             // Create the checkbox list for the ingredients
             CheckedListBox ingredientCheckBoxList = new CheckedListBox();
             ingredientCheckBoxList.Location = new Point(xPos, yPos + categoryLabel.Height + spacing);
-            ingredientCheckBoxList.Width = 200;
+            ingredientCheckBoxList.Width = 230;
 
             // Populate the checkbox list with ingredients for the current category
             ingredientCheckBoxList.Items.AddRange(ingredienteCategorie.ToArray());
@@ -86,6 +86,12 @@ namespace Proiect_frigider
             {
                 // Item was checked
                 // Do something
+               if (checkedListBox_selectedIngredients.Items.Contains(selectedItem))
+               {
+                    MessageBox.Show("Item already selected!");
+                    return;
+                }
+
                 checkedListBox_selectedIngredients.Items.Add(selectedItem);
             }
             else

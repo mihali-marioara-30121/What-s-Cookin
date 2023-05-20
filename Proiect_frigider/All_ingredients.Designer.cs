@@ -38,7 +38,7 @@ namespace Proiect_frigider
             this.panel_all_ingredients.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel_all_ingredients.Location = new System.Drawing.Point(-1, -2);
             this.panel_all_ingredients.Name = "panel_all_ingredients";
-            this.panel_all_ingredients.Size = new System.Drawing.Size(673, 477);
+            this.panel_all_ingredients.Size = new System.Drawing.Size(716, 479);
             this.panel_all_ingredients.TabIndex = 1;
             // 
             // All_ingredients

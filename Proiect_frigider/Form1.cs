@@ -19,22 +19,17 @@ namespace Proiect_frigider
        // Register register = new Register();
         public FormFirstPage()
         {
+            
             InitializeComponent();
             all_i = new All_ingredients(checkedListBox_selectedIngredients);
            // recipeDescription.Show();
             
         }
 
-        /*  private void textBox_Search_KeyPress(object sender, KeyPressEventArgs e)
-          {
-
-          }
-        */
-
         private void FormFirstPage_Load(object sender, EventArgs e)
         {
-           // MyProfile mp = new MyProfile();
-
+            // MyProfile mp = new MyProfile();
+            helloLabel.Text = "";
             quick_i.Owner = this;
             //register.Owner = this;
             quick_i.TopLevel = false;
@@ -58,7 +53,7 @@ namespace Proiect_frigider
             {
                 all_i.BringToFront();
                 all_i.Show();
-                button_ingredients.Text = "LESS INGREDIENTS";
+                button_ingredients.Text = "CLICK HERE FOR LESS INGREDIENTS";
                 label_kitchen.Text = "DETAILED KITCHEN";
             }
             else
@@ -69,29 +64,12 @@ namespace Proiect_frigider
                 button_ingredients.Text = "CLICK HERE FOR MORE INGREDIENTS";
                 label_kitchen.Text = "QUICK KITCHEN";
             }
-
-            // asta ii daca faceam fara forma noua
-            /*  if (button_ingredients.Text == "CLICK HERE FOR MORE INGREDIENTS")
-              {
-                  panel_all.Show();
-                  button_ingredients.Text = "LESS INGREDIENTS";
-                  label_kitchen.Text = "DETAILED KITCHEN";
-              }
-              else
-              {
-                  panel_all.Hide();
-                  panel_ingredients.Show();
-                  panel_ingredients.BringToFront();
-                  button_ingredients.Text = "CLICK HERE FOR MORE INGREDIENTS";
-                  label_kitchen.Text = "QUICK KITCHEN";
-              }
-            */
         }
         private void button_MyProfile_Click(object sender, EventArgs e)
         {
             // mp = new MyProfile();
          
-            if (label1.Text == "")
+            if (helloLabel.Text == "")
             {
                 login.TopLevel = false;
                 panel_main.Controls.Add(login);
@@ -100,7 +78,7 @@ namespace Proiect_frigider
             }
             else
             {
-                mp.label1.Text =this.label1.Text;
+                mp.helloLabel.Text = this.helloLabel.Text;
                 mp.TopLevel = false;
                 panel_main.Controls.Add(mp);
                 mp.BringToFront();
@@ -112,39 +90,45 @@ namespace Proiect_frigider
 
         private void pictureBox_logo_Click(object sender, EventArgs e)
         {
-            mp.Hide();
-            bookmarks.Hide();
-            login.Hide();
-            tips.Hide();
+            if (mp != null)
+            {
+                mp.Hide();
+            }
+            if (bookmarks != null)
+            {
+                bookmarks.Hide();
+            }
+            if (login != null)
+            {
+                login.Hide();
+            }
+            if (tips != null)
+            {
+                tips.Hide();
+            }
+
+            //mp.Hide();
+            //bookmarks.Hide();
+            //login.Hide();
 
             if (recipesForm != null)
             {
                 recipesForm.Hide();
             }
-            //panel_main.BringToFront();
-           // panel_main.Show();
-           // recipeDescription.Hide();
-
-          /*  if(recipesForm.ShowDialog() == DialogResult.OK) 
-            { 
-                recipesForm.Hide();
-            }
-          */
-           
-            //recipeDescription.Hide();
-            // panel_main.BringToFront();
-             panel_main.Show();
+            panel_main.BringToFront();
+            panel_main.Show();
+            
         }
 
         private void button_bookmarks_Click(object sender, EventArgs e)
         {
 
-            if (label1.Text == "")
+            if (helloLabel.Text == "")
             {
                 login.TopLevel = false;
                 panel_main.Controls.Add(login);
                 login.BringToFront();
-                login.Show();
+                login.Show();               
             }
             else
             {
@@ -166,7 +150,7 @@ namespace Proiect_frigider
 
             if(button_login.Text == "Logout")
             {
-                this.label1.Text = "";
+                this.helloLabel.Text = "";
                 Login login = Application.OpenForms.OfType<Login>().FirstOrDefault();
                 login.label1.Text = "LOGIN";
                 button_login.Text = "Login";
@@ -186,6 +170,11 @@ namespace Proiect_frigider
         
         private void button_CS_Click(object sender, EventArgs e)
         {
+            if(checkedListBox_selectedIngredients.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Select the ingredients you want to delete!");
+                return;
+            }
             for (int i = checkedListBox_selectedIngredients.CheckedItems.Count - 1; i >= 0; i--)
             {
                 object item = checkedListBox_selectedIngredients.CheckedItems[i];
@@ -253,14 +242,7 @@ namespace Proiect_frigider
             {
                 ingredientList.Substring(0, ingredientList.Length - 1);
                 List<Recipe> recipes = RecipeService.findRecipesByIngredients(ingredientList, 20);
-                //foreach (Recipe recipe in recipes)
-                //{
-                //   var recipeInformations = RecipeInformationService.GetRecipeInformation(recipe.id);
-                //   RecipeInformationDTO recipeInformationDTO = RecipeInformationService.extractNecessaryInformationFromCompleteRecipes(recipeInformations);
-
-                //}
-
-               
+                
                 recipesForm = new Recipes(panel_main, recipes);
 
                 recipesForm.TopLevel = false;

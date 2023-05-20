@@ -31,7 +31,7 @@ namespace Proiect_frigider
         {
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.helloLabel = new System.Windows.Forms.Label();
             this.panel_profile = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,16 +66,16 @@ namespace Proiect_frigider
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label1
+            // helloLabel
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MV Boli", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(488, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 62);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Hello username!";
+            this.helloLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.helloLabel.AutoSize = true;
+            this.helloLabel.Font = new System.Drawing.Font("MV Boli", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helloLabel.Location = new System.Drawing.Point(488, 37);
+            this.helloLabel.Name = "helloLabel";
+            this.helloLabel.Size = new System.Drawing.Size(373, 62);
+            this.helloLabel.TabIndex = 3;
+            this.helloLabel.Text = "Hello username!";
             // 
             // panel_profile
             // 
@@ -167,7 +167,7 @@ namespace Proiect_frigider
             this.ClientSize = new System.Drawing.Size(1414, 724);
             this.ControlBox = false;
             this.Controls.Add(this.panel_profile);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.helloLabel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -189,7 +189,7 @@ namespace Proiect_frigider
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label helloLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
     }

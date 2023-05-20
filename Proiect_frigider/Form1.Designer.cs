@@ -43,17 +43,14 @@ namespace Proiect_frigider
             this.button_CA = new System.Windows.Forms.Button();
             this.findRecipeButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.panel_main = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.helloLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel_ingredients = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label_kitchen = new System.Windows.Forms.Label();
             this.button_ingredients = new System.Windows.Forms.Button();
+            this.panel_ingredients = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -144,18 +141,19 @@ namespace Proiect_frigider
             this.panel4.Controls.Add(this.button_CA);
             this.panel4.Controls.Add(this.findRecipeButton);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(766, 127);
+            this.panel4.Location = new System.Drawing.Point(945, 154);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(303, 485);
             this.panel4.TabIndex = 11;
             // 
             // button_CS
             // 
+            this.button_CS.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button_CS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button_CS.Font = new System.Drawing.Font("MV Boli", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_CS.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_CS.Location = new System.Drawing.Point(3, 57);
             this.button_CS.Name = "button_CS";
-            this.button_CS.Size = new System.Drawing.Size(148, 34);
+            this.button_CS.Size = new System.Drawing.Size(166, 34);
             this.button_CS.TabIndex = 10;
             this.button_CS.Text = "CLEAR SELECTED";
             this.button_CS.UseVisualStyleBackColor = false;
@@ -172,7 +170,7 @@ namespace Proiect_frigider
             // button_CA
             // 
             this.button_CA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button_CA.Font = new System.Drawing.Font("MV Boli", 10F);
+            this.button_CA.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_CA.Location = new System.Drawing.Point(175, 57);
             this.button_CA.Name = "button_CA";
             this.button_CA.Size = new System.Drawing.Size(116, 34);
@@ -183,11 +181,12 @@ namespace Proiect_frigider
             // 
             // findRecipeButton
             // 
+            this.findRecipeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.findRecipeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.findRecipeButton.Font = new System.Drawing.Font("MV Boli", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findRecipeButton.Location = new System.Drawing.Point(86, 428);
+            this.findRecipeButton.Location = new System.Drawing.Point(68, 426);
             this.findRecipeButton.Name = "findRecipeButton";
-            this.findRecipeButton.Size = new System.Drawing.Size(141, 39);
+            this.findRecipeButton.Size = new System.Drawing.Size(164, 39);
             this.findRecipeButton.TabIndex = 7;
             this.findRecipeButton.Text = "FIND RECIEPE";
             this.findRecipeButton.UseVisualStyleBackColor = false;
@@ -197,85 +196,44 @@ namespace Proiect_frigider
             // 
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label3.Font = new System.Drawing.Font("MV Boli", 12F);
-            this.label3.Location = new System.Drawing.Point(-3, 0);
+            this.label3.Location = new System.Drawing.Point(-2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(306, 50);
             this.label3.TabIndex = 0;
             this.label3.Text = "YOUR INGREDIENTS";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button9.Location = new System.Drawing.Point(1160, 196);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(207, 72);
-            this.button9.TabIndex = 12;
-            this.button9.Text = "FEELING LAZY TODAY ?\r\n\r\n";
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button10.Location = new System.Drawing.Point(1160, 399);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(209, 53);
-            this.button10.TabIndex = 13;
-            this.button10.Text = "WANNA IMPRESS \r\n?\r\n";
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button11.Location = new System.Drawing.Point(1160, 490);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(191, 55);
-            this.button11.TabIndex = 14;
-            this.button11.Text = "CAN\'T DECIDE ?\r\n";
-            this.button11.UseVisualStyleBackColor = false;
-            // 
             // panel_main
             // 
             this.panel_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel_main.Controls.Add(this.label1);
-            this.panel_main.Controls.Add(this.groupBox1);
-            this.panel_main.Controls.Add(this.button11);
-            this.panel_main.Controls.Add(this.button10);
-            this.panel_main.Controls.Add(this.button9);
+            this.panel_main.Controls.Add(this.helloLabel);
+            this.panel_main.Controls.Add(this.panel_ingredients);
             this.panel_main.Controls.Add(this.panel4);
-            this.panel_main.Location = new System.Drawing.Point(-12, 98);
+            this.panel_main.Controls.Add(this.groupBox1);
+            this.panel_main.Location = new System.Drawing.Point(-12, 100);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1442, 768);
+            this.panel_main.Size = new System.Drawing.Size(1442, 766);
             this.panel_main.TabIndex = 16;
             // 
-            // label1
+            // helloLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(1042, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 29);
-            this.label1.TabIndex = 16;
+            this.helloLabel.AccessibleName = "helloLabel";
+            this.helloLabel.AutoSize = true;
+            this.helloLabel.Font = new System.Drawing.Font("MV Boli", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helloLabel.Location = new System.Drawing.Point(1099, 60);
+            this.helloLabel.Name = "helloLabel";
+            this.helloLabel.Size = new System.Drawing.Size(164, 44);
+            this.helloLabel.TabIndex = 17;
+            this.helloLabel.Text = "helloLabel";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.panel_ingredients);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Location = new System.Drawing.Point(21, 27);
+            this.groupBox1.Location = new System.Drawing.Point(74, 44);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(713, 585);
+            this.groupBox1.Size = new System.Drawing.Size(719, 613);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
-            // 
-            // panel_ingredients
-            // 
-            this.panel_ingredients.BackColor = System.Drawing.SystemColors.Control;
-            this.panel_ingredients.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel_ingredients.Location = new System.Drawing.Point(0, 118);
-            this.panel_ingredients.Name = "panel_ingredients";
-            this.panel_ingredients.Size = new System.Drawing.Size(713, 467);
-            this.panel_ingredients.TabIndex = 7;
             // 
             // panel1
             // 
@@ -284,7 +242,7 @@ namespace Proiect_frigider
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label_kitchen);
             this.panel1.Controls.Add(this.button_ingredients);
-            this.panel1.Location = new System.Drawing.Point(0, 9);
+            this.panel1.Location = new System.Drawing.Point(3, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(713, 112);
             this.panel1.TabIndex = 6;
@@ -323,13 +281,22 @@ namespace Proiect_frigider
             this.button_ingredients.UseVisualStyleBackColor = false;
             this.button_ingredients.Click += new System.EventHandler(this.button_ingredients_Click);
             // 
+            // panel_ingredients
+            // 
+            this.panel_ingredients.BackColor = System.Drawing.SystemColors.Control;
+            this.panel_ingredients.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel_ingredients.Location = new System.Drawing.Point(74, 169);
+            this.panel_ingredients.Name = "panel_ingredients";
+            this.panel_ingredients.Size = new System.Drawing.Size(716, 479);
+            this.panel_ingredients.TabIndex = 7;
+            // 
             // FormFirstPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1430, 864);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_main);
+            this.Controls.Add(this.panel2);
             this.Name = "FormFirstPage";
             this.Text = "What s cookin’?";
             this.Load += new System.EventHandler(this.FormFirstPage_Load);
@@ -354,21 +321,19 @@ namespace Proiect_frigider
         private System.Windows.Forms.Button button_CA;
         private System.Windows.Forms.Button findRecipeButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Panel panel_main;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panel_ingredients;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label_kitchen;
-        private System.Windows.Forms.Button button_ingredients;
         private System.Windows.Forms.Button button_bookmarks;
         private System.Windows.Forms.Button button_tips;
         public System.Windows.Forms.CheckedListBox checkedListBox_selectedIngredients;
         private System.Windows.Forms.Button button_CS;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label helloLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_kitchen;
+        private System.Windows.Forms.Button button_ingredients;
+        private System.Windows.Forms.Panel panel_ingredients;
     }
 }
 
