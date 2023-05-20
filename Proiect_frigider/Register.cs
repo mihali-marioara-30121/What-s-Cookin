@@ -10,10 +10,11 @@ namespace Proiect_frigider
     {
         // FormFirstPage f = new FormFirstPage();
         // public FormFirstPage f;
-
-        public Register()
+        Login login;
+        public Register(Login login)
         {
             InitializeComponent();
+            this.login = login;
         }
         string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
@@ -26,6 +27,7 @@ namespace Proiect_frigider
         */
         private void button1_Click(object sender, EventArgs e)
         {
+            
             string username = textBox1.Text;
             string email = textBox2.Text;
             string password = textBox3.Text;
@@ -71,15 +73,14 @@ namespace Proiect_frigider
                         if (rowsAffected > 0)
                         {
                             FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
-                            Login login = Application.OpenForms.OfType<Login>().FirstOrDefault();
+
                            // MyProfile mp = Application.OpenForms.OfType<MyProfile>().FirstOrDefault();
 
 
                             if (form1 != null)
                             {
-                                form1.helloLabel.Text = "Hello " + textBox1.Text + " !";
-                                form1.button_login.Text = "Logout";
-                                login.label1.Text = "Hello " + username;
+                                form1.helloLabel.Text = "Hello " + username + "!";
+                                form1.button_login.Text = "Logout";    
                             //    mp.label1.Text = "HELLO " + username + " !";
                             }
 
@@ -98,6 +99,10 @@ namespace Proiect_frigider
                             textBox4.Text = "CONFIRM PASSWORD";
                             //((FormFirstPage)this.Owner).checkedListBox_selectedIngredients.Items.Add(checkedListBox1.Items[e.Index]);
                             this.Hide();
+                            if (login != null)
+                            {
+                                login.Hide();
+                            }
 
                         }
                         else

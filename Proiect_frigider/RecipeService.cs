@@ -21,7 +21,7 @@ namespace Proiect_frigider
             request.AddParameter("limitLicense", true); // whether the recipes should have an open license that allows display with proper attribution
             request.AddParameter("ranking", 1); // whether to maximize used ingredients (1) or minimize missing ingredients (2) first
             request.AddParameter("ignorePantry", true); // whether to ignore typical pantry items, such as water, salt, flour, etc.
-            request.AddParameter("apiKey", "808494c3cf674464a6d0269234e271e4"); // Spoonacular API key
+            request.AddParameter("apiKey", "38d526420ec34b768787a8fd96de98f4"); // Spoonacular API key
 
             // We execute the request using the RestClient's Execute method, passing in the RestResponse class as a generic type parameter
             RestResponse<List<Recipe>> response = client.Execute<List<Recipe>>(request);

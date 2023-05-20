@@ -25,7 +25,7 @@ namespace Proiect_frigider
         private void My_recipes_Load(object sender, EventArgs e)
         {
             FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
-            string numeUtilizator = form1.helloLabel.Text.Split(' ')[1];
+            string numeUtilizator = UserContext.username;
             this.textBox1.Text = numeUtilizator + " 'S RECIPES";
 
             // Interogăm baza de date pentru a obține primele trei retete postate de către utilizatorul respectiv
@@ -239,7 +239,7 @@ namespace Proiect_frigider
             td.Show();
             td.pictureBox1.Image = this.pictureBox1.Image;
 
-            string numeUtilizator = textBox1.Text.Split(' ')[0];
+            string numeUtilizator = UserContext.username;
 
             // Interogați baza de date pentru a obține id_user-ul corespunzător
             int idUser;
@@ -266,7 +266,7 @@ namespace Proiect_frigider
                     if (reader.Read())
                     {
                         string titlu = reader.GetString(0);
-                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        int timpPreparare = reader.GetInt32(1);
                         string ingrediente = reader.GetString(2);
                         int portii = reader.GetInt32(3);
                         string instructiuni = reader.GetString(4);
@@ -276,7 +276,7 @@ namespace Proiect_frigider
 
 
                         // Afișați detaliile în textBox1
-                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare}{Environment.NewLine}";
                         td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
                         td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
                         td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");
@@ -293,7 +293,7 @@ namespace Proiect_frigider
             td = new Tips_descriere();
             td.Show();
             td.pictureBox1.Image = this.pictureBox2.Image;
-            string numeUtilizator = textBox1.Text.Split(' ')[0];
+            string numeUtilizator = UserContext.username;
 
             // Interogați baza de date pentru a obține id_user-ul corespunzător
             int idUser;
@@ -320,7 +320,7 @@ namespace Proiect_frigider
                     if (reader.Read())
                     {
                         string titlu = reader.GetString(0);
-                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        int timpPreparare = reader.GetInt32(1);
                         string ingrediente = reader.GetString(2);
                         int portii = reader.GetInt32(3);
                         string instructiuni = reader.GetString(4);
@@ -330,7 +330,7 @@ namespace Proiect_frigider
 
 
                         // Afișați detaliile în textBox1
-                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare}{Environment.NewLine}";
                         td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
                         td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
                         td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");
@@ -345,7 +345,7 @@ namespace Proiect_frigider
             td = new Tips_descriere();
             td.Show();
             td.pictureBox1.Image = this.pictureBox3.Image;
-            string numeUtilizator = textBox1.Text.Split(' ')[0];
+            string numeUtilizator = UserContext.username;
 
             // Interogați baza de date pentru a obține id_user-ul corespunzător
             int idUser;
@@ -372,7 +372,7 @@ namespace Proiect_frigider
                     if (reader.Read())
                     {
                         string titlu = reader.GetString(0);
-                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        int timpPreparare = reader.GetInt32(1);
                         string ingrediente = reader.GetString(2);
                         int portii = reader.GetInt32(3);
                         string instructiuni = reader.GetString(4);
@@ -382,7 +382,7 @@ namespace Proiect_frigider
 
 
                         // Afișați detaliile în textBox1
-                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare}{Environment.NewLine}";
                         td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
                         td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
                         td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");
@@ -397,7 +397,7 @@ namespace Proiect_frigider
             td = new Tips_descriere();
             td.Show();
             td.pictureBox1.Image = this.pictureBox4.Image;
-            string numeUtilizator = textBox1.Text.Split(' ')[0];
+            string numeUtilizator = UserContext.username;
 
             // Interogați baza de date pentru a obține id_user-ul corespunzător
             int idUser;
@@ -424,7 +424,7 @@ namespace Proiect_frigider
                     if (reader.Read())
                     {
                         string titlu = reader.GetString(0);
-                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        int timpPreparare = reader.GetInt32(1);
                         string ingrediente = reader.GetString(2);
                         int portii = reader.GetInt32(3);
                         string instructiuni = reader.GetString(4);
@@ -434,7 +434,7 @@ namespace Proiect_frigider
 
 
                         // Afișați detaliile în textBox1
-                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare}{Environment.NewLine}";
                         td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
                         td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
                         td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");
@@ -449,7 +449,7 @@ namespace Proiect_frigider
             td = new Tips_descriere();
             td.Show();
             td.pictureBox1.Image = this.pictureBox5.Image;
-            string numeUtilizator = textBox1.Text.Split(' ')[0];
+            string numeUtilizator = UserContext.username;
 
             // Interogați baza de date pentru a obține id_user-ul corespunzător
             int idUser;
@@ -476,7 +476,7 @@ namespace Proiect_frigider
                     if (reader.Read())
                     {
                         string titlu = reader.GetString(0);
-                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        int timpPreparare = reader.GetInt32(1);
                         string ingrediente = reader.GetString(2);
                         int portii = reader.GetInt32(3);
                         string instructiuni = reader.GetString(4);
@@ -486,7 +486,7 @@ namespace Proiect_frigider
 
 
                         // Afișați detaliile în textBox1
-                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare}{Environment.NewLine}";
                         td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
                         td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
                         td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");
@@ -501,7 +501,7 @@ namespace Proiect_frigider
             td = new Tips_descriere();
             td.Show();
             td.pictureBox1.Image = this.pictureBox6.Image;
-            string numeUtilizator = textBox1.Text.Split(' ')[0];
+            string numeUtilizator = UserContext.username;
 
             // Interogați baza de date pentru a obține id_user-ul corespunzător
             int idUser;
@@ -528,7 +528,7 @@ namespace Proiect_frigider
                     if (reader.Read())
                     {
                         string titlu = reader.GetString(0);
-                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        int timpPreparare = reader.GetInt32(1);
                         string ingrediente = reader.GetString(2);
                         int portii = reader.GetInt32(3);
                         string instructiuni = reader.GetString(4);
@@ -538,7 +538,7 @@ namespace Proiect_frigider
 
 
                         // Afișați detaliile în textBox1
-                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare} minute{Environment.NewLine}";
                         td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
                         td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
                         td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");

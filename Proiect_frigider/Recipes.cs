@@ -9,9 +9,8 @@ namespace Proiect_frigider
 {
     public partial class Recipes : Form
     {
-        FormFirstPage formFirstPage;
         private List<Recipe> recipes;
-        Boolean missedIngredientsRowsGrew = false;
+
         RecipeDescription recipeDescription;
         Panel panel_main;
         public Recipes(Panel panel_main, List<Recipe> recipeList)
@@ -99,7 +98,6 @@ namespace Proiect_frigider
 
             //unusedIngredients = resizedLabel(unusedIngredients, maxWidth);
 
-            missedIngredientsRowsGrew = false;
             recipesPanel.Controls.Add(recipeImage);
             recipesPanel.Controls.Add(recipeTitle);
             recipesPanel.Controls.Add(missedIngredients);
@@ -111,7 +109,7 @@ namespace Proiect_frigider
             recipeImage.Click += (sender, e) =>
             {
                 // Open the ItemDetailsForm and pass the corresponding data
-                recipeDescription = new RecipeDescription(recipeDTOs, null);
+                recipeDescription = new RecipeDescription(recipeDTOs, null,null);
                 if (recipeDescription.hasDescription)
                 {
                     recipeDescription.Show();
@@ -119,26 +117,6 @@ namespace Proiect_frigider
             };
         }
 
-        //private Label resizedLabel(Label label, int maxWidth)
-        //{
-        //    Size textSize = TextRenderer.MeasureText(label.Text, label.Font);
-
-        //    // Check if the text exceeds the maximum width
-        //    if (textSize.Width > maxWidth)
-        //    {
-        //        // Calculate the number of lines required
-        //        int lines = (int)Math.Ceiling((double)textSize.Width / maxWidth);
-
-        //        // Set the label size to wrap the text
-        //        label.Size = new Size(maxWidth, label.Font.Height * lines);
-        //    }
-        //    else
-        //    {
-        //        // Set the label size to fit the text
-        //        label.Size = textSize;
-        //    }
-        //    return label;
-        //}
 
         private PictureBox getRecipeImage(string imageUrl, int xPos, int yPos)
         {

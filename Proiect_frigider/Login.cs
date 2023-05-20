@@ -8,26 +8,16 @@ namespace Proiect_frigider
 {
     public partial class Login : Form
     {
-        Register register= new Register();
+        Register register;
         string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
        // MyProfile mp = new MyProfile();
 
         public Login()
         {
             InitializeComponent();
+            register = new Register(this);
         }
-       // public MyProfile mp; // Proprietate pentru a menține referința la formularul MyProfile
-
-        // Metodă pentru a seta textul etichetei în formularul MyProfile
-      /*  private void SetMyProfileLabelText(string username)
-        {
-            if (myProfileForm != null)
-            {
-                myProfileForm.label1.Text = "Hello " + username;
-            }
-        }
-      */
-
+    
         private void button_register_Click(object sender, EventArgs e)
         {
             register.TopLevel = false;
@@ -54,10 +44,10 @@ namespace Proiect_frigider
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = textBox1.Text;
-            string password = textBox2.Text;
-           // string username = "mari";
-           // string password = "parola";
+            //string username = textBox1.Text;
+            //string password = textBox2.Text;
+            string username = "mari";
+            string password = "parola";
 
             // Verifică dacă utilizatorul și parola corespund
             if (VerifyCredentials(username, password))
@@ -69,15 +59,12 @@ namespace Proiect_frigider
                 MessageBox.Show("Autentificare reușită! Bine ați venit, " + username + "!");
                 this.label1.Text = "Hello " + username;
                 FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
-               // MyProfile mp = Application.OpenForms.OfType<MyProfile>().FirstOrDefault();
-               
-                
-               //mp.label1.Text = "HELLO " + username + " !";
+            
 
                 if (form1 != null)
                 {
                    
-                    form1.helloLabel.Text = "Hello " + textBox1.Text + " !";                  
+                    form1.helloLabel.Text = "Hello " + username + "!";                  
                     form1.button_login.Text = "Logout";
                 }
                 textBox1.Text = "USERNAME";

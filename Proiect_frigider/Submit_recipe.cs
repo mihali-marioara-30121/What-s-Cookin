@@ -35,6 +35,7 @@ namespace Proiect_frigider
 
         }
 
+
         private void textBox1_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
@@ -60,18 +61,44 @@ namespace Proiect_frigider
             textBox6.Text = "";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void submit_button_Click(object sender, EventArgs e)
         {
+       
+            Boolean isValidRecipeName = isTextBoxComplete(textBox1, "RECIPE NAME");
+            Boolean isValidFile = isTextBoxComplete(textBox2, "UPLOAD A FILE");
+            Boolean isValidCookingTime = isTextBoxComplete(textBox3, "COOKING TIME(MINUTES)");
+            Boolean isValidServings = isTextBoxComplete(textBox4, "SERVINGS");
+            Boolean isValidIngredients = isTextBoxComplete(textBox5, "INGREDIENT LIST");
+            Boolean isValidInstructions= isTextBoxComplete(textBox6, "INSTRUCTIONS");
+
+            if(!(isValidCookingTime && isValidServings && isValidIngredients && isValidRecipeName && isValidInstructions && isValidFile))
+            {
+                MessageBox.Show("All fields must be completed!");
+                return;
+            }
+
             FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
 
-            // Obțineți ID-ul utilizatorului corespunzător numelui de utilizator din label1
-            string numeUtilizator = form1.helloLabel.Text.Split(' ')[1];
-            int userId = GetUserIdByNumeUtilizator(numeUtilizator);
+          
+            string numeUtilizator = UserContext.username;
+            int userId = UserContext.id;
 
             // Obțineți valorile introduse în controalele TextBox
             string titlu = textBox1.Text;
             string pozaPath = textBox2.Text;
-            TimeSpan timpPreparare = TimeSpan.Parse(textBox3.Text);
+
+            if (!(int.TryParse(textBox3.Text, out _)))
+            {
+                MessageBox.Show("The cooking time must be an integer value!");
+                return;
+            }
+            int timpPreparare = int.Parse(textBox3.Text);
+
+            if (!(int.TryParse(textBox4.Text, out _)))
+            {
+                MessageBox.Show("The servings must be an integer value!");
+                return;
+            }
             int portii = int.Parse(textBox4.Text);
             string ingrediente = textBox5.Text;
             string instructiuni = textBox6.Text;
@@ -108,7 +135,7 @@ namespace Proiect_frigider
                     command.Dispose();
 
                     // Afisati un mesaj de succes
-                    MessageBox.Show("Reteta a fost adaugata cu succes!");
+                    MessageBox.Show("Recipe posted successfully!");
 
                     this.Hide();
                     textBox1.Text = "RECIPE NAME";
@@ -116,28 +143,45 @@ namespace Proiect_frigider
                     textBox3.Text = "COOKING TIME(MINUTES)";
                     textBox4.Text = "SERVINGS";
                     textBox5.Text = "INGREDIENT LIST";
-                    textBox4.Text = "INSTRUCTIONS";
+                    textBox6.Text = "INSTRUCTIONS";
 
                 }
             }
         }
 
-        // Funcție pentru a obține ID-ul utilizatorului pe baza numelui de utilizator
-        private int GetUserIdByNumeUtilizator(string numeUtilizator)
+        //// Funcție pentru a obține ID-ul utilizatorului pe baza numelui de utilizator
+        //private int GetUserIdByNumeUtilizator(string numeUtilizator)
+        //{
+        //    using (SqlConnection connection = new SqlConnection(connectionString))
+        //    {
+        //        string query = "SELECT id FROM Utilizator WHERE nume_utilizator = @nume_utilizator";
+        //        using (SqlCommand command = new SqlCommand(query, connection))
+        //        {
+        //            command.Parameters.AddWithValue("@nume_utilizator", numeUtilizator);
+        //            connection.Open();
+        //            int userId = (int)command.ExecuteScalar();
+        //            command.Dispose();
+        //            return userId;
+        //        }
+        //    }
+        //}
+
+        private Boolean isTextBoxComplete(TextBox textBox, string initialValue)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if (textBox.Text == null)
             {
-                string query = "SELECT id FROM Utilizator WHERE nume_utilizator = @nume_utilizator";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@nume_utilizator", numeUtilizator);
-                    connection.Open();
-                    int userId = (int)command.ExecuteScalar();
-                    command.Dispose();
-                    return userId;
-                }
+                return false; ;
             }
+            if (textBox.Text == "")
+            {
+                return false; ;
+            }
+            if (textBox.Text == initialValue)
+            {
+                return false; ;
+            }
+            return true;
         }
 
-    }
+        }
 }

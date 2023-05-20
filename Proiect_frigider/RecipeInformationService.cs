@@ -19,7 +19,7 @@ namespace Proiect_frigider
             // Add the required API key as a query parameter
             request.AddParameter("id", recipeId); // ingredients to search for
             request.AddParameter("includeNutrition", false);
-            request.AddParameter("apiKey", "808494c3cf674464a6d0269234e271e4");
+            request.AddParameter("apiKey", "38d526420ec34b768787a8fd96de98f4");
 
             // Execute the request and retrieve the response
             RestResponse<RecipeInformation> response = client.Execute<RecipeInformation>(request);

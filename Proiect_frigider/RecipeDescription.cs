@@ -22,9 +22,11 @@ namespace Proiect_frigider
         string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
 
-        public RecipeDescription(RecipeDTO recipe, RecipeInformationDTO bookmarkRecipe)
+        public RecipeDescription(RecipeDTO recipe, RecipeInformationDTO bookmarkRecipe, Bookmarks bookmarks)
         {    
             InitializeComponent();
+            this.bookmarks = bookmarks;
+
             if (bookmarkRecipe == null)
             {
                 recipeDTO = recipe;
@@ -96,6 +98,7 @@ namespace Proiect_frigider
             if (isBookmark)
             {
                 isBookmark = false;
+
                 Boolean succsesfullyDeletedBookmark = BookmarkService.deleteBookmark(UserContext.id, recipeInformationDTO.id);
                 
                     if (!succsesfullyDeletedBookmark)
@@ -107,6 +110,12 @@ namespace Proiect_frigider
                 MessageBox.Show("Bookmark deleted successfully!");
 
                 bookmarkButton.Text = "BOOKMARK IT!";
+
+                if (bookmarks != null)
+                {
+                    bookmarks.UpdateBookmarksPanel();
+                }
+
                 return;
             }
             
@@ -171,28 +180,5 @@ namespace Proiect_frigider
                 }
             }
         }
-        //private int getUserIdByUsername(string username)
-        //{
-        //    string query = "Select * FROM Utilizator WHERE nume_utilizator = @username";
-        //    SqlConnection connection = new SqlConnection(connectionString);
-        //    SqlCommand command = new SqlCommand(query, connection);
-        //    connection.Open();
-
-        //    if (username != null)
-        //    {
-        //        command.Parameters.Add("@username", username);
-        //    }
-
-        //    SqlDataReader reader = command.ExecuteReader();
-
-
-        //    while (reader.Read())
-        //    {
-        //        return reader.GetInt32(0);
-        //    }
-
-        //    return -1;
-        //    connection.Close();
-        //}
     }
 }

@@ -117,11 +117,11 @@
     <Compile Include="CHANGE PASSWORD.Designer.cs">
       <DependentUpon>CHANGE PASSWORD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormFirstPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormFirstPage.Designer.cs">
+      <DependentUpon>FormFirstPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Ingredient.cs" />
     <Compile Include="Login.cs">
@@ -192,7 +192,6 @@
     <Compile Include="Tips_descriere.Designer.cs">
       <DependentUpon>Tips_descriere.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
     <Compile Include="UserContext.cs" />
     <Compile Include="UserService.cs" />
     <EmbeddedResource Include="All_ingredients.resx">
@@ -204,8 +203,8 @@
     <EmbeddedResource Include="CHANGE PASSWORD.resx">
       <DependentUpon>CHANGE PASSWORD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormFirstPage.resx">
+      <DependentUpon>FormFirstPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

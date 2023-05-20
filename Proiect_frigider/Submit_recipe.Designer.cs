@@ -36,7 +36,7 @@ namespace Proiect_frigider
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.submit_button = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -115,18 +115,18 @@ namespace Proiect_frigider
             this.textBox6.Text = "INSTRUCTIONS";
             this.textBox6.Click += new System.EventHandler(this.textBox6_Click);
             // 
-            // button1
+            // submit_button
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button1.Font = new System.Drawing.Font("MV Boli", 12F);
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(215, 526);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 50);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "SUBMIT";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.submit_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.submit_button.Font = new System.Drawing.Font("MV Boli", 12F);
+            this.submit_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.submit_button.Location = new System.Drawing.Point(215, 526);
+            this.submit_button.Name = "submit_button";
+            this.submit_button.Size = new System.Drawing.Size(136, 50);
+            this.submit_button.TabIndex = 7;
+            this.submit_button.Text = "SUBMIT";
+            this.submit_button.UseVisualStyleBackColor = false;
+            this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
             // 
             // button2
             // 
@@ -151,7 +151,7 @@ namespace Proiect_frigider
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 613);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.submit_button);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -176,7 +176,7 @@ namespace Proiect_frigider
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button submit_button;
         private System.Windows.Forms.Button button2;
     }
 }

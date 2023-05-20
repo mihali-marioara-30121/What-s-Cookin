@@ -16,6 +16,11 @@ namespace Proiect_frigider
             this.userId = userId;
             generateAllRecipes();
         }
+        public void UpdateBookmarksPanel()
+        {
+            bookmarksPanel.Controls.Clear();
+            generateAllRecipes();
+        }
 
         private void generateAllRecipes()
         {
@@ -90,7 +95,7 @@ namespace Proiect_frigider
             recipeImage.Click += (sender, e) =>
             {
                 // Open the ItemDetailsForm and pass the corresponding data
-                recipeDescription = new RecipeDescription(null, recipeInformationDTO);
+                recipeDescription = new RecipeDescription(null, recipeInformationDTO, this);
                 if (recipeDescription.hasDescription)
                 {
                     recipeDescription.Show();
