@@ -73,7 +73,7 @@ namespace Proiect_frigider
             this.helloLabel.Font = new System.Drawing.Font("MV Boli", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helloLabel.Location = new System.Drawing.Point(488, 37);
             this.helloLabel.Name = "helloLabel";
-            this.helloLabel.Size = new System.Drawing.Size(373, 62);
+            this.helloLabel.Size = new System.Drawing.Size(381, 63);
             this.helloLabel.TabIndex = 3;
             this.helloLabel.Text = "Hello username!";
             // 
@@ -119,7 +119,7 @@ namespace Proiect_frigider
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(260, 187);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 32);
+            this.label4.Size = new System.Drawing.Size(99, 32);
             this.label4.TabIndex = 7;
             this.label4.Text = "EMAIL";
             // 
@@ -129,7 +129,7 @@ namespace Proiect_frigider
             this.button_changePassword.Font = new System.Drawing.Font("MV Boli", 12F);
             this.button_changePassword.Location = new System.Drawing.Point(118, 323);
             this.button_changePassword.Name = "button_changePassword";
-            this.button_changePassword.Size = new System.Drawing.Size(157, 47);
+            this.button_changePassword.Size = new System.Drawing.Size(265, 47);
             this.button_changePassword.TabIndex = 6;
             this.button_changePassword.Text = "CHANGE PASSWORD";
             this.button_changePassword.UseVisualStyleBackColor = false;
@@ -143,7 +143,7 @@ namespace Proiect_frigider
             this.label3.Font = new System.Drawing.Font("MV Boli", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(210, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(250, 49);
+            this.label3.Size = new System.Drawing.Size(259, 50);
             this.label3.TabIndex = 5;
             this.label3.Text = "MY PROFILE";
             // 
@@ -155,7 +155,7 @@ namespace Proiect_frigider
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(254, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 32);
+            this.label2.Size = new System.Drawing.Size(174, 32);
             this.label2.TabIndex = 4;
             this.label2.Text = "USERNAME";
             // 

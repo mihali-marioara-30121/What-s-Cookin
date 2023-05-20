@@ -65,7 +65,7 @@ namespace Proiect_frigider
             FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
 
             // Obțineți ID-ul utilizatorului corespunzător numelui de utilizator din label1
-            string numeUtilizator = form1.label1.Text.Split(' ')[1];
+            string numeUtilizator = form1.helloLabel.Text.Split(' ')[1];
             int userId = GetUserIdByNumeUtilizator(numeUtilizator);
 
             // Obțineți valorile introduse în controalele TextBox

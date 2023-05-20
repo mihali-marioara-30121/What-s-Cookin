@@ -15,6 +15,7 @@ namespace Proiect_frigider
 {
     public partial class My_recipes : Form
     {
+       
         public My_recipes()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace Proiect_frigider
         private void My_recipes_Load(object sender, EventArgs e)
         {
             FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
-            string numeUtilizator = form1.label1.Text.Split(' ')[1];
+            string numeUtilizator = form1.helloLabel.Text.Split(' ')[1];
             this.textBox1.Text = numeUtilizator + " 'S RECIPES";
 
             // Interogăm baza de date pentru a obține primele trei retete postate de către utilizatorul respectiv
@@ -171,6 +172,7 @@ namespace Proiect_frigider
                 reader.Close();
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             DeleteRecipe(1);
@@ -230,5 +232,320 @@ namespace Proiect_frigider
             }
         }
 
+        Tips_descriere td;
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            td = new Tips_descriere();
+            td.Show();
+            td.pictureBox1.Image = this.pictureBox1.Image;
+
+            string numeUtilizator = textBox1.Text.Split(' ')[0];
+
+            // Interogați baza de date pentru a obține id_user-ul corespunzător
+            int idUser;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT id_user FROM retete_postate WHERE id_user = (SELECT id FROM Utilizator WHERE nume_utilizator = @NumeUtilizator)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NumeUtilizator", numeUtilizator);
+                idUser = (int?)command.ExecuteScalar() ?? 0;
+            }
+
+            // Utilizați idUser pentru a obține timpul de preparare corespunzător
+            if (idUser != 0)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT titlu, timp_preparare, ingrediente, portii, instructiuni FROM retete_postate WHERE id_user = @IdUser";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@IdUser", idUser);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string titlu = reader.GetString(0);
+                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        string ingrediente = reader.GetString(2);
+                        int portii = reader.GetInt32(3);
+                        string instructiuni = reader.GetString(4);
+
+                        // Setăm titlul formei td
+                        td.Text = titlu;
+
+
+                        // Afișați detaliile în textBox1
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");
+                    }
+                }
+
+            }
+        }
+
+
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            td = new Tips_descriere();
+            td.Show();
+            td.pictureBox1.Image = this.pictureBox2.Image;
+            string numeUtilizator = textBox1.Text.Split(' ')[0];
+
+            // Interogați baza de date pentru a obține id_user-ul corespunzător
+            int idUser;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT id_user FROM retete_postate WHERE id_user = (SELECT id FROM Utilizator WHERE nume_utilizator = @NumeUtilizator)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NumeUtilizator", numeUtilizator);
+                idUser = (int?)command.ExecuteScalar() ?? 0;
+            }
+
+            // Utilizați idUser pentru a obține timpul de preparare corespunzător
+            if (idUser != 0)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT titlu, timp_preparare, ingrediente, portii, instructiuni FROM retete_postate WHERE id_user = @IdUser ORDER BY id ASC OFFSET 1 ROWS FETCH NEXT 1 ROWS ONLY";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@IdUser", idUser);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string titlu = reader.GetString(0);
+                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        string ingrediente = reader.GetString(2);
+                        int portii = reader.GetInt32(3);
+                        string instructiuni = reader.GetString(4);
+
+                        // Setăm titlul formei td
+                        td.Text = titlu;
+
+
+                        // Afișați detaliile în textBox1
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");
+                    }
+                }
+
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            td = new Tips_descriere();
+            td.Show();
+            td.pictureBox1.Image = this.pictureBox3.Image;
+            string numeUtilizator = textBox1.Text.Split(' ')[0];
+
+            // Interogați baza de date pentru a obține id_user-ul corespunzător
+            int idUser;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT id_user FROM retete_postate WHERE id_user = (SELECT id FROM Utilizator WHERE nume_utilizator = @NumeUtilizator)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NumeUtilizator", numeUtilizator);
+                idUser = (int?)command.ExecuteScalar() ?? 0;
+            }
+
+            // Utilizați idUser pentru a obține timpul de preparare corespunzător
+            if (idUser != 0)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT titlu, timp_preparare, ingrediente, portii, instructiuni FROM retete_postate WHERE id_user = @IdUser ORDER BY id ASC OFFSET 2 ROWS FETCH NEXT 1 ROWS ONLY";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@IdUser", idUser);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string titlu = reader.GetString(0);
+                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        string ingrediente = reader.GetString(2);
+                        int portii = reader.GetInt32(3);
+                        string instructiuni = reader.GetString(4);
+
+                        // Setăm titlul formei td
+                        td.Text = titlu;
+
+
+                        // Afișați detaliile în textBox1
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");
+                    }
+                }
+
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            td = new Tips_descriere();
+            td.Show();
+            td.pictureBox1.Image = this.pictureBox4.Image;
+            string numeUtilizator = textBox1.Text.Split(' ')[0];
+
+            // Interogați baza de date pentru a obține id_user-ul corespunzător
+            int idUser;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT id_user FROM retete_postate WHERE id_user = (SELECT id FROM Utilizator WHERE nume_utilizator = @NumeUtilizator)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NumeUtilizator", numeUtilizator);
+                idUser = (int?)command.ExecuteScalar() ?? 0;
+            }
+
+            // Utilizați idUser pentru a obține timpul de preparare corespunzător
+            if (idUser != 0)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT titlu, timp_preparare, ingrediente, portii, instructiuni FROM retete_postate WHERE id_user = @IdUser ORDER BY id ASC OFFSET 3 ROWS FETCH NEXT 1 ROWS ONLY";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@IdUser", idUser);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string titlu = reader.GetString(0);
+                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        string ingrediente = reader.GetString(2);
+                        int portii = reader.GetInt32(3);
+                        string instructiuni = reader.GetString(4);
+
+                        // Setăm titlul formei td
+                        td.Text = titlu;
+
+
+                        // Afișați detaliile în textBox1
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");
+                    }
+                }
+
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            td = new Tips_descriere();
+            td.Show();
+            td.pictureBox1.Image = this.pictureBox5.Image;
+            string numeUtilizator = textBox1.Text.Split(' ')[0];
+
+            // Interogați baza de date pentru a obține id_user-ul corespunzător
+            int idUser;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT titlu, timp_preparare, ingrediente, portii, instructiuni FROM retete_postate WHERE id_user = @IdUser ORDER BY id ASC OFFSET 4 ROWS FETCH NEXT 1 ROWS ONLY";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NumeUtilizator", numeUtilizator);
+                idUser = (int?)command.ExecuteScalar() ?? 0;
+            }
+
+            // Utilizați idUser pentru a obține timpul de preparare corespunzător
+            if (idUser != 0)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT titlu, timp_preparare, ingrediente, portii, instructiuni FROM retete_postate WHERE id_user = @IdUser";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@IdUser", idUser);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string titlu = reader.GetString(0);
+                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        string ingrediente = reader.GetString(2);
+                        int portii = reader.GetInt32(3);
+                        string instructiuni = reader.GetString(4);
+
+                        // Setăm titlul formei td
+                        td.Text = titlu;
+
+
+                        // Afișați detaliile în textBox1
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");
+                    }
+                }
+
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            td = new Tips_descriere();
+            td.Show();
+            td.pictureBox1.Image = this.pictureBox6.Image;
+            string numeUtilizator = textBox1.Text.Split(' ')[0];
+
+            // Interogați baza de date pentru a obține id_user-ul corespunzător
+            int idUser;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT id_user FROM retete_postate WHERE id_user = (SELECT id FROM Utilizator WHERE nume_utilizator = @NumeUtilizator)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NumeUtilizator", numeUtilizator);
+                idUser = (int?)command.ExecuteScalar() ?? 0;
+            }
+
+            // Utilizați idUser pentru a obține timpul de preparare corespunzător
+            if (idUser != 0)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT titlu, timp_preparare, ingrediente, portii, instructiuni FROM retete_postate WHERE id_user = @IdUser ORDER BY id ASC OFFSET 5 ROWS FETCH NEXT 1 ROWS ONLY";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@IdUser", idUser);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string titlu = reader.GetString(0);
+                        TimeSpan timpPreparare = reader.GetTimeSpan(1);
+                        string ingrediente = reader.GetString(2);
+                        int portii = reader.GetInt32(3);
+                        string instructiuni = reader.GetString(4);
+
+                        // Setăm titlul formei td
+                        td.Text = titlu;
+
+
+                        // Afișați detaliile în textBox1
+                        td.textBox1.Text = $"Timp preparare: {timpPreparare.TotalMinutes} minute{Environment.NewLine}";
+                        td.textBox1.AppendText($"Ingrediente: {ingrediente}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Număr de porții: {portii}{Environment.NewLine}");
+                        td.textBox1.AppendText($"Instrucțiuni: {instructiuni}");
+                    }
+                }
+
+            }
+        }
     }
 }
