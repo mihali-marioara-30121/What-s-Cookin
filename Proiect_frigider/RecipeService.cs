@@ -1,10 +1,8 @@
 ﻿using RestSharp;
-using System;
 using System.Collections.Generic;
 
 namespace Proiect_frigider
 {
-
     //Mari's key:38d526420ec34b768787a8fd96de98f4
     //Diana's key: 808494c3cf674464a6d0269234e271e4
     internal class RecipeService
@@ -30,7 +28,6 @@ namespace Proiect_frigider
             return response.Data;
         }
 
-
         public static List<RecipeDTO> extractNecessaryInformationFromCompleteRecipes(List<Recipe> completeRecipes)
         {
             List<RecipeDTO> recipeDTOs = new List<RecipeDTO>();
@@ -48,22 +45,6 @@ namespace Proiect_frigider
             }
 
             return recipeDTOs;
-        }
-
-        private static string extractUsedIngredients(Recipe recipe)
-        {
-            string usedIngredients = "";
-
-            foreach (Ingredient usedIngredient in recipe.usedIngredients)
-            {
-                usedIngredients += usedIngredient.name + ",";
-            }
-
-            if (usedIngredients.Length > 0)
-            {
-                return usedIngredients.Substring(0, usedIngredients.Length - 1);
-            }
-            return "";
         }
 
         private static string extractMissedIngredients(Recipe recipe)
@@ -98,38 +79,5 @@ namespace Proiect_frigider
             }
             return "";
         }
-
-        private static string generateDescription(Recipe recipe)
-        {
-            String description = "";
-
-            foreach (Ingredient ingredient in recipe.usedIngredients)
-            {
-                description += " - " + ingredient.original + "\n";
-            }
-
-            return description;
-        }
-
-
-        private static string getAllIngredients(Recipe recipe)
-        {
-            List<string> allIngredients = new List<string>();
-
-            foreach (Ingredient usedIngredient in recipe.usedIngredients)
-            {
-                allIngredients.Add(usedIngredient.name);
-            }
-
-            foreach (Ingredient missedIngredient in recipe.missedIngredients)
-            {
-                allIngredients.Add(missedIngredient.name);
-            }
-
-            string allIngredientsString = string.Join(",", allIngredients);
-            return allIngredientsString;
-        }
-
-
     }
 }

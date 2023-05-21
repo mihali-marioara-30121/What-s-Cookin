@@ -21,48 +21,6 @@ namespace Proiect_frigider
 
         private void Tips_Load(object sender, EventArgs e)
         {
-            /*
-            int panelCount = 21;
-            int panelWidth = 191;
-            int panelHeight = 246;
-            int margin = 50;
-            int colCount = 4;
-
-            for (int j = 1; j <= panelCount; j++)
-            {
-                // Crearea unui nou panou
-                Panel panel = new Panel();
-                panel.BorderStyle = BorderStyle.FixedSingle;
-                panel.Size = new Size(panelWidth, panelHeight);
-
-                // Crearea PictureBox-ului și adăugarea sa la panou
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox.Size = new Size(panelWidth - 191, panelHeight - 132);
-                pictureBox.Location = new Point(10, 10);
-                panel.Controls.Add(pictureBox);
-
-                // Crearea Butonului și adăugarea sa la panou
-                Button button = new Button();
-                button.Text = "Button " + j.ToString();
-                button.Size = new Size(110, 60);
-                button.Location = new Point(panelWidth / 2 - button.Size.Width / 2, panelHeight - 80);
-                panel.Controls.Add(button);
-
-                // Calcularea poziției panoului pe ecran
-                int row = (j - 1) / colCount;
-                int col = (j - 1) % colCount;
-                int x = margin + col * (panelWidth + margin);
-                int y = margin + row * (panelHeight + margin);
-                panel.Location = new Point(x, y);
-
-                // Adăugarea panoului la panel1
-                panel1.Controls.Add(panel);
-            }
-
-           */
-
-
             // creăm o conexiune la baza de date utilizând cheia de conexiune din App.config
             //string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);

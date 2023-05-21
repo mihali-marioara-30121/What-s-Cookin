@@ -63,15 +63,15 @@ namespace Proiect_frigider
 
         private void submit_button_Click(object sender, EventArgs e)
         {
-       
+
             Boolean isValidRecipeName = isTextBoxComplete(textBox1, "RECIPE NAME");
             Boolean isValidFile = isTextBoxComplete(textBox2, "UPLOAD A FILE");
             Boolean isValidCookingTime = isTextBoxComplete(textBox3, "COOKING TIME(MINUTES)");
             Boolean isValidServings = isTextBoxComplete(textBox4, "SERVINGS");
             Boolean isValidIngredients = isTextBoxComplete(textBox5, "INGREDIENT LIST");
-            Boolean isValidInstructions= isTextBoxComplete(textBox6, "INSTRUCTIONS");
+            Boolean isValidInstructions = isTextBoxComplete(textBox6, "INSTRUCTIONS");
 
-            if(!(isValidCookingTime && isValidServings && isValidIngredients && isValidRecipeName && isValidInstructions && isValidFile))
+            if (!(isValidCookingTime && isValidServings && isValidIngredients && isValidRecipeName && isValidInstructions && isValidFile))
             {
                 MessageBox.Show("All fields must be completed!");
                 return;
@@ -79,7 +79,7 @@ namespace Proiect_frigider
 
             FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
 
-          
+
             string numeUtilizator = UserContext.username;
             int userId = UserContext.id;
 
@@ -149,23 +149,6 @@ namespace Proiect_frigider
             }
         }
 
-        //// Funcție pentru a obține ID-ul utilizatorului pe baza numelui de utilizator
-        //private int GetUserIdByNumeUtilizator(string numeUtilizator)
-        //{
-        //    using (SqlConnection connection = new SqlConnection(connectionString))
-        //    {
-        //        string query = "SELECT id FROM Utilizator WHERE nume_utilizator = @nume_utilizator";
-        //        using (SqlCommand command = new SqlCommand(query, connection))
-        //        {
-        //            command.Parameters.AddWithValue("@nume_utilizator", numeUtilizator);
-        //            connection.Open();
-        //            int userId = (int)command.ExecuteScalar();
-        //            command.Dispose();
-        //            return userId;
-        //        }
-        //    }
-        //}
-
         private Boolean isTextBoxComplete(TextBox textBox, string initialValue)
         {
             if (textBox.Text == null)
@@ -183,5 +166,5 @@ namespace Proiect_frigider
             return true;
         }
 
-        }
+    }
 }

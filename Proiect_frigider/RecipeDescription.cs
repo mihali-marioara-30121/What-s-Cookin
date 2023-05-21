@@ -18,10 +18,6 @@ namespace Proiect_frigider
         private RecipeDTO recipeDTO;
         private Bookmarks bookmarks;
        
-        
-        string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
-
-
         public RecipeDescription(RecipeDTO recipe, RecipeInformationDTO bookmarkRecipe, Bookmarks bookmarks)
         {    
             InitializeComponent();
@@ -55,8 +51,6 @@ namespace Proiect_frigider
   
             // PopulateRecipeDetails();
         }
-
-    
 
         private void setRecipeDetails(string imageUrl)
         {
@@ -146,7 +140,7 @@ namespace Proiect_frigider
                 }
             }
            
-            Boolean successfullyAddedBookmark = addBookmarkToCurrentRecipe(idUser, idRetetaApi);
+            Boolean successfullyAddedBookmark = BookmarkService.addBookmarkToCurrentRecipe(idUser, idRetetaApi);
 
             if (!successfullyAddedBookmark)
             {
@@ -156,29 +150,6 @@ namespace Proiect_frigider
 
             MessageBox.Show("Successfully added bookmark!");
             bookmarkButton.Text = "BOOKMARKED!";
-        }
-
-        private bool addBookmarkToCurrentRecipe(int idUser, int idRetetaApi)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "INSERT INTO retete_preferate (id_user, id_reteta_api) VALUES (@idUser, @idRetetaApi)";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@idUser", idUser);
-                    command.Parameters.AddWithValue("@idRetetaApi", idRetetaApi);
-
-                    connection.Open();
-                    int rowsAffected = command.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        return true;
-                    }
-
-                    return false;
-                }
-            }
         }
     }
 }

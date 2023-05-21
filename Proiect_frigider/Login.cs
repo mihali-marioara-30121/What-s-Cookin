@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -40,17 +39,15 @@ namespace Proiect_frigider
 
         }
 
-     
-
         private void button1_Click(object sender, EventArgs e)
         {
-            //string username = textBox1.Text;
-            //string password = textBox2.Text;
-            string username = "mari";
-            string password = "parola";
+            string username = textBox1.Text;
+            string password = textBox2.Text;
+            //string username = "mari";
+            //string password = "parola";
 
             // Verifică dacă utilizatorul și parola corespund
-            if (VerifyCredentials(username, password))
+            if (UserService.VerifyCredentials(username, password))
             {
                 UserContext.username = username;
                 UserContext.password = password;
@@ -75,27 +72,6 @@ namespace Proiect_frigider
             {
                 MessageBox.Show("Nume de utilizator sau parolă incorectă. Vă rugăm să încercați din nou.", "Eroare de autentificare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private bool VerifyCredentials(string username, string password)
-        {
-            // Crează conexiunea la baza de date și interogarea SQL
-            SqlConnection connection = new SqlConnection(connectionString);
-            string query = "SELECT COUNT(*) FROM Utilizator WHERE nume_utilizator = @Username AND parola = @Password";
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@Username", username);
-            command.Parameters.AddWithValue("@Password", password);
-
-            // Deschide conexiunea și execută interogarea
-            connection.Open();
-            int count = (int)command.ExecuteScalar();
-
-            // Închide conexiunea și eliberează resursele
-            connection.Close();
-            command.Dispose();
-
-            // Returnează true dacă utilizatorul și parola corespund, altfel false
-            return count > 0;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

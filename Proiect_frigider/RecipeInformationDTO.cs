@@ -9,7 +9,6 @@ namespace Proiect_frigider
         public string image { get; set; }
         public int servings { get; set; }
         public int readyInMinutes { get; set; }
-       // public List<Instruction> AnalyzedInstructions { get; set; }
         public string instructions { get; set; }
         public List<string> ingredientsList { get; set; }
 

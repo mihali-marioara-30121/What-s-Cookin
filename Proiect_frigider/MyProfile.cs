@@ -19,9 +19,6 @@ namespace Proiect_frigider
             InitializeComponent();
         }
 
-        // public string Username { get; set; }
-
-
         private void button_changePassword_Click(object sender, EventArgs e)
         {
             CP.TopLevel = false;
@@ -32,11 +29,6 @@ namespace Proiect_frigider
 
         private void MyProfile_Load(object sender, EventArgs e)
         {
-
-
-            //string labelText = helloLabel.Text;
-            //string[] words = labelText.Split(' ');
-            //string alDoileaCuvant = words[1];
             string alDoileaCuvant = UserContext.username;
             string username = string.Empty;
             string email = string.Empty;
@@ -78,9 +70,6 @@ namespace Proiect_frigider
 
         }
 
-
-
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (mr == null || mr.IsDisposed)
@@ -92,11 +81,7 @@ namespace Proiect_frigider
             // Aducem forma 'mr' în față și o afișăm
             mr.BringToFront();
             mr.Show();
-
             
         }
-
-
-
     }
 }

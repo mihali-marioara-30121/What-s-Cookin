@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -8,23 +6,13 @@ namespace Proiect_frigider
 {
     public partial class Register : Form
     {
-        // FormFirstPage f = new FormFirstPage();
-        // public FormFirstPage f;
         Login login;
         public Register(Login login)
         {
             InitializeComponent();
             this.login = login;
         }
-        string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
-        /*  private void button1_Click(object sender, EventArgs e)
-          {
-              //trebuie sa pun cod de verificare daca a introdus corect
-              MessageBox.Show("Register successful!");
-              this.Hide();
-          }
-        */
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -46,70 +34,45 @@ namespace Proiect_frigider
 
             if (password == confirmPassword)
             {
-                // Crează o conexiune la baza de date utilizând cheia de conexiune din App.config
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                if (UserService.UtilizatorExists(username))
                 {
-                    // Construiește interogarea SQL pentru a insera utilizatorul în baza de date
-                    string query = "INSERT INTO Utilizator (parola, nume_utilizator, email) VALUES (@parola, @nume_utilizator, @email)";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    MessageBox.Show("Utilizatorul există deja în baza de date. Vă rugăm să alegeți un alt nume de utilizator.", "Eroare de înregistrare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                bool isUserAddedSuccessfully = UserService.AddUser(username, password, email);
+
+                   // Verifică dacă inserarea a avut succes
+                if (isUserAddedSuccessfully)
                     {
-                        // Adaugă parametrii pentru interogare pentru a evita SQL injection
-                        command.Parameters.AddWithValue("@parola", password);
-                        command.Parameters.AddWithValue("@nume_utilizator", username);
-                        command.Parameters.AddWithValue("@email", email);
-                        if (UtilizatorExists(username))
-                        {
-                            MessageBox.Show("Utilizatorul există deja în baza de date. Vă rugăm să alegeți un alt nume de utilizator.", "Eroare de înregistrare", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
+                      FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
 
-                        // Deschide conexiunea la baza de date
-                        connection.Open();
+                     if (form1 != null)
+                     {
+                        form1.helloLabel.Text = "Hello " + username + "!";
+                        form1.button_login.Text = "Logout";    
+                     }
 
-                        // Execută interogarea SQL
-                        int rowsAffected = command.ExecuteNonQuery();
+                      UserContext.username = username;
+                      UserContext.password = password;
+                      UserContext.id = UserService.GetUserIdByName(UserContext.username); 
 
-                        // Verifică dacă inserarea a avut succes
-                        if (rowsAffected > 0)
-                        {
-                            FormFirstPage form1 = Application.OpenForms.OfType<FormFirstPage>().FirstOrDefault();
+                    MessageBox.Show("Utilizatorul a fost înregistrat cu succes!");
+                     textBox1.Text = "USERNAME";
+                     textBox2.Text = "EMAIL";
+                     textBox3.Text = "PASSWORD";
+                     textBox4.Text = "CONFIRM PASSWORD";
 
-                           // MyProfile mp = Application.OpenForms.OfType<MyProfile>().FirstOrDefault();
+                      this.Hide();
+                      if (login != null)
+                      {
+                           login.Hide();
+                      }
 
-
-                            if (form1 != null)
-                            {
-                                form1.helloLabel.Text = "Hello " + username + "!";
-                                form1.button_login.Text = "Logout";    
-                            //    mp.label1.Text = "HELLO " + username + " !";
-                            }
-
-
-                            //f.label1.Text = "Hello " + textBox1.Text;
-                          //  ((FormFirstPage)this.Owner).label1.Text = "Hello " + textBox1.Text; 
-
-                           UserContext.username = username;
-                            UserContext.password = password;
-                           UserContext.id = UserService.GetUserIdByName(UserContext.username); 
-
-                            MessageBox.Show("Utilizatorul a fost înregistrat cu succes!");
-                            textBox1.Text = "USERNAME";
-                            textBox2.Text = "EMAIL";
-                            textBox3.Text = "PASSWORD";
-                            textBox4.Text = "CONFIRM PASSWORD";
-                            //((FormFirstPage)this.Owner).checkedListBox_selectedIngredients.Items.Add(checkedListBox1.Items[e.Index]);
-                            this.Hide();
-                            if (login != null)
-                            {
-                                login.Hide();
-                            }
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Înregistrarea utilizatorului a eșuat!");
-                        }
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("Înregistrarea utilizatorului a eșuat!");
                 }
             }
             else
@@ -117,26 +80,6 @@ namespace Proiect_frigider
                 MessageBox.Show("Parola și confirmarea parolei nu coincid!");
             }
             
-        }
-
-        private bool UtilizatorExists(string username)
-        {
-            // Crează conexiunea la baza de date și interogarea SQL
-            SqlConnection connection = new SqlConnection(connectionString);
-            string query = "SELECT COUNT(*) FROM Utilizator WHERE nume_utilizator = @Username";
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@Username", username);
-
-            // Deschide conexiunea și execută interogarea
-            connection.Open();
-            int count = (int)command.ExecuteScalar();
-
-            // Închide conexiunea și eliberează resursele
-            connection.Close();
-            command.Dispose();
-
-            // Returnează true dacă numele de utilizator există deja, altfel false
-            return count > 0;
         }
 
         private void textBox1_Click(object sender, EventArgs e)
